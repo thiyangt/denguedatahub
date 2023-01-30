@@ -24,8 +24,26 @@ colnames_americas_annual_data <- colnames(americas_annual_data)
 colnamedf <- data.frame(name=colnames_americas_annual_data)
 colnamedf <- colnamedf %>% separate(name, "year")
 
-america_data <- americas_annual_data[3:54, ]
-view(america_data)
-dim(america_data) # 52 222
-colnames()
+america_data_year <- americas_annual_data[3:54, ]
+view(america_data_year)
+dim(america_data_year) # 52 222
+colnames(america_data_year) <- c("Region", "Country", colnamedf$year[-c(1, 2)])
+view(america_data_year)
+dim(america_data_year)
+america_data_year_long <- america_data_year %>%
+  pivot_longer(!c("Region", "Country"), names_to = "year", values_to = "count")
+view(america_data_year_long)
 
+america_data_type <- americas_annual_data[3:54, ]
+view(america_data_type)
+dim(america_data_type) # 52 222
+colnames(america_data_type) <- americas_annual_data[1, ]
+view(america_data_type)
+dim(america_data_type)
+america_data_type_long <- america_data_type %>%
+  pivot_longer(!c("Region", "Country"), names_to = "type", values_to = "count")
+view(america_data_type_long)
+
+americas_annual_data <- left_join(america_data_type_long, america_data_year_long)
+view(americas_annual_data)
+save(americas_annual_data, file=here("data", "americas_annual_data.rda"))
