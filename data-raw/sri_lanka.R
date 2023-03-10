@@ -14,6 +14,6 @@ srilanka_weekly_data <- tibble(year = year,
                                start.date = start.date,
                                end.date = end.date,
                                district = division,
-                               count = dengue.cases
+                               cases = dengue.cases
                                )
 save(srilanka_weekly_data, file=here("data", "srilanka_weekly_data.rda"))
