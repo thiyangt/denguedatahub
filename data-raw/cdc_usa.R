@@ -15,3 +15,8 @@ columns_to_remove <- grep("flag", names(cdc_usa))
 cdc_usa <- cdc_usa[,-columns_to_remove]
 View(cdc_usa)
 colnames(cdc_usa)
+cdc_usa_dengue_infection <- cdc_usa
+save(cdc_usa_dengue_infection, 
+     file=here("data", 
+               "cdc_usa_dengue_infection.rda"))
+
