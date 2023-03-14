@@ -34,7 +34,18 @@ cdc_usa <- bind_rows(cdc_usa, y2019new)
 cdc_usa <- cdc_usa %>%
   filter(`Reporting Area` != "TOTAL")
 
+cdc_usa <- cdc_usa %>%
+  rename(c(area = `Reporting Area`,
+  year = `MMWR Year`,
+  week = `MMWR Week`,
+  dengue_cases = `Dengue virus infections, Dengue, Current week`,
+  dengue_like_illness = `Dengue virus infections, Dengue-like illness, Current week`,
+  severe_dengue = `Dengue virus infections, Severe dengue, Current week`,
+  location_1 = `Location 1`, location_2 = `Location 2`))
+
 view(cdc_usa)
+cdc_usa_dengue_infection <- cdc_usa
+view(cdc_usa_dengue_infection)
 save(cdc_usa_dengue_infection, 
      file=here("data", 
                "cdc_usa_dengue_infection.rda"))
