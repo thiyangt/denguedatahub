@@ -1,4 +1,4 @@
-# 9 March 2023
+# 14 March 2023
 # https://www.straitstimes.com/multimedia/graphics/2022/06/singapore-dengue-cases/index.html?shell#:~:text=Singapore%20is%20currently%20seeing%2030,lower%20than%20the%202020%20surge
 #--------
 library(stringr)
@@ -53,4 +53,5 @@ View(data2023)
 singapore_weekly_data <- bind_rows(singapore5, data2022)
 singapore_weekly_data <- bind_rows(singapore_weekly_data, data2023)
 view(singapore_weekly_data)
-save(singapore_weekly_data, file=here("data", "singapore_weekly_data.rda"))
+#save(singapore_weekly_data, file=here("data", "singapore_weekly_data.rda"))
+usethis::use_data(singapore_weekly_data, overwrite = TRUE)

@@ -19,4 +19,6 @@ colnames(philippines) <- c("location", "affected_and_infected"
                            "region")
 View(philippines)
 philippines_daily_data <- philippines
-save(philippines_daily_data, file=here("data", "philippines_daily_data.rda"))
+#save(philippines_daily_data, file=here("data", "philippines_daily_data.rda"))
+
+usethis::use_data(philippines_daily_data, overwrite = TRUE)

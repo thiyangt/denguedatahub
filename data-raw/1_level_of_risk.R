@@ -83,5 +83,7 @@ load(here("data", "level_of_risk.rda"))
 colnames(level_of_risk) <- c("country",
                              "level_of_risk",
                              "region")
-save(level_of_risk, file=here("data",
-                              "level_of_risk.rda"))
+#save(level_of_risk, file=here("data",
+#                              "level_of_risk.rda"))
+usethis::use_data(level_of_risk, overwrite = TRUE)
+usethis::use_r("level_of_risk")

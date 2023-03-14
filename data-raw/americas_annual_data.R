@@ -56,3 +56,4 @@ americas_annual_data <- americas_annual_data %>%
            cases = count))
 save(americas_annual_data, file=here("data", "americas_annual_data.rda"))
 
+usethis::use_data(americas_annual_data, overwrite = TRUE)

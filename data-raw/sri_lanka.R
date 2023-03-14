@@ -16,4 +16,5 @@ srilanka_weekly_data <- tibble(year = year,
                                district = division,
                                cases = dengue.cases
                                )
-save(srilanka_weekly_data, file=here("data", "srilanka_weekly_data.rda"))
+#save(srilanka_weekly_data, file=here("data", "srilanka_weekly_data.rda"))
+usethis::use_data(srilanka_weekly_data, overwrite = TRUE)
