@@ -72,6 +72,16 @@ level_of_risk$Region <- as.factor(level_of_risk$Region)
 head(level_of_risk)
 summary(level_of_risk)
 
+
+
 usethis::use_data(level_of_risk, overwrite = TRUE)
 usethis::use_r("level_of_risk")
 #source: https://rstudio4edu.github.io/rstudio4edu-book/data-pkg.html
+
+
+load(here("data", "level_of_risk.rda"))
+colnames(level_of_risk) <- c("country",
+                             "level_of_risk",
+                             "region")
+save(level_of_risk, file=here("data",
+                              "level_of_risk.rda"))

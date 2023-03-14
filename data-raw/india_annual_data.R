@@ -67,3 +67,9 @@ view(india_data)
 india_annual_data <- india_data
 save(india_annual_data, file=here("data", "india_annual_data.rda"))
 view(india_annual_data)
+
+load(here("data", "india_annual_data.rda"))
+
+india_annual_data <- india_annual_data %>%
+  rename(area=`Affected States/UTs`)
+save(india_annual_data, file=here("data", "india_annual_data.rda"))

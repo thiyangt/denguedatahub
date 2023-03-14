@@ -7,4 +7,5 @@ china <- read_csv(here("data-raw", "china.csv"))
 #View(china)
 china$year <- as.integer(china$year)
 head(china)
-save(china, file=here("data", "china.rda"))
+china_annual_data <- china
+save(china_annual_data, file=here("data", "china_annual_data.rda"))

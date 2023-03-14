@@ -47,3 +47,12 @@ view(america_data_type_long)
 americas_annual_data <- left_join(america_data_type_long, america_data_year_long)
 view(americas_annual_data)
 save(americas_annual_data, file=here("data", "americas_annual_data.rda"))
+
+americas_annual_data.rda <- load(here("data", "americas_annual_data.rda"))
+colnames(americas_annual_data)
+americas_annual_data <- americas_annual_data %>%
+  rename(c(region = Region,
+           country = Country,
+           cases = count))
+save(americas_annual_data, file=here("data", "americas_annual_data.rda"))
+

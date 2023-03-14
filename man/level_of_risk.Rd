@@ -7,9 +7,9 @@
 \format{
 A tibble with 148 rows and 3 variables:
 \describe{
-\item{Country}{factor Name of the country}
-\item{\verb{Level of Risk}}{factor Dengue risk level. There are three categories: Frequent or continuous, Sporadic or uncertain. “Frequent or continuous” risk means that either frequent outbreaks occur or transmission is ongoing. “Sporadic or uncertain” risk means that the risk varies and is unpredictable and that country-level data is not available.}
-\item{Region}{factor Region}
+\item{country}{factor Name of the country}
+\item{level_of_risk`}{factor Dengue risk level. There are three categories: Frequent or continuous, Sporadic or uncertain. “Frequent or continuous” risk means that either frequent outbreaks occur or transmission is ongoing. “Sporadic or uncertain” risk means that the risk varies and is unpredictable and that country-level data is not available.}
+\item{region}{factor Region}
 }
 }
 \source{

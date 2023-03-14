@@ -7,10 +7,10 @@
 \format{
 A tibble with 899134 rows and 5 variables:
 \describe{
-\item{Region}{Name of the affected region}
-\item{Country}{Name of the country}
+\item{region}{Name of the affected region}
+\item{country}{Name of the country}
 \item{type}{An indicator for the type of cases (deaths, cases)}
-\item{count}{cases}
+\item{cases}{cases}
 \item{year}{year}
 }
 }

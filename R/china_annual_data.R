@@ -10,5 +10,5 @@
 #'    }
 #' @source \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8997546/table/ijerph-19-03910-t001/?report=objectonly}
 #' @examples 
-#' head(china)
-"china"
+#' head(china_annual_data)
+"china_annual_data"
