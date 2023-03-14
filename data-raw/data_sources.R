@@ -13,3 +13,6 @@
 
 #philipine - done
 #https://data.humdata.org/dataset/philippine-dengue-cases-and-deaths?
+
+## dengue: 11 March 2023
+#https://www3.paho.org/data/index.php/en/mnu-topics/indicadores-dengue-en/dengue-regional-en/317-reg-dengue-lethality-en.html
