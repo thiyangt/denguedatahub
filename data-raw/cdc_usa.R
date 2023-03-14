@@ -10,14 +10,14 @@ y2019 <- read_csv("data-raw/cdc/NNDSS_-_TABLE_1J._Dengue_virus_infections__Dengu
 
 
 
-select_var <- c("Reporting Area", "MMWR Year","MMWR Week", "Dengue virus infections, Dengue, Current week", "Dengue virus infections, Dengue-like illness, Current week", "Dengue virus infections, Severe dengue, Current week", "Location 1", "Location 2")
+select_var <- c("Reporting Area", "MMWR Year","MMWR Week", "Dengue virus infections, Dengue, Current week", "Dengue virus infections, Dengue-like illness, Current week", "Dengue virus infections, Severe dengue, Current week")
 
 
 y2022new <- y2022 %>% select(all_of(select_var))
 y2021new <- y2021 %>% select(all_of(select_var))
 y2020new <- y2020 %>% select(all_of(select_var))
 
-select_var2 <- c("Reporting Area", "MMWR Year","MMWR Week", "Dengue virus infections§ , Dengue, Current week", "Dengue virus infections§ s, Dengue-like illness, Current week", "Dengue virus infections§ , Severe dengue, Current week", "Location 1", "Location 2")
+select_var2 <- c("Reporting Area", "MMWR Year","MMWR Week", "Dengue virus infections§ , Dengue, Current week", "Dengue virus infections§ s, Dengue-like illness, Current week", "Dengue virus infections§ , Severe dengue, Current week")
 
 y2019new <- y2019 %>% select(all_of(select_var2))
 
@@ -40,8 +40,7 @@ cdc_usa <- cdc_usa %>%
   week = `MMWR Week`,
   dengue_cases = `Dengue virus infections, Dengue, Current week`,
   dengue_like_illness = `Dengue virus infections, Dengue-like illness, Current week`,
-  severe_dengue = `Dengue virus infections, Severe dengue, Current week`,
-  location_1 = `Location 1`, location_2 = `Location 2`))
+  severe_dengue = `Dengue virus infections, Severe dengue, Current week`))
 
 view(cdc_usa)
 cdc_usa_dengue_infection <- cdc_usa
