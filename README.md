@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# denguedatahub
+# denguedatahub <img src="hexsticker/logo.png" align="right" height="200"/>
 
 <!-- badges: start -->
 <!-- badges: end -->
