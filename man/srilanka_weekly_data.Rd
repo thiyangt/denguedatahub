@@ -11,7 +11,7 @@ A tibble with 18772 rows and 6 variables:
 \item{week}{week number}
 \item{start.date}{starting date of the week}
 \item{end.date}{ending date of the week}
-\item{division}{district name}
+\item{district}{district name}
 \item{cases}{Number of dengue cases}
 }
 }
