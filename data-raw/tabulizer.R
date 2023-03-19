@@ -26,18 +26,44 @@ get_addresses <- function(url){
 #'ad.list
 #'
 
+filter_year_wer <- function(year, address){
+
+filter_year <- function(year, address){
+  grepl(year, address, fixed=TRUE)
+}
+
+arg <- list(year, address)
+required.years <- unlist(purrr::pmap(arg, filter_year)) 
+required.num <- which(required.years == TRUE)
+address[required.num]
+
+}
+
+
+filter_year_wer(2023, ad.list[1])
+
 a <- "https://www.epid.gov.lk"
-ad.list
+
 
 convert_wer_to_tidy <- function(starting.date, starting.week){
 
 combine <- function(url.part2){
   paste("https://www.epid.gov.lk",url.part2,sep="")
 }
+reports.url <- purrr::map(ad.list, combine)
 
-combine(ad.list[1])
+read_data <- function(url){
+  table2 <- tabulizer::extract_tables(url,
+                          pages = 3, 
+                          guess = FALSE, 
+                          output = "data.frame")
+  tbl <- tibble::tibble(x =table2[1][[1]][2:27, 1])
+  tbl2 <- tidyr::separate(tbl,x, c("district", "count"))
+  tbl2$count <- as.numeric(tbl2$count)
+  tbl2
+}
 
-purrr::map(ad.list, combine)
+tidy.list <- purrr::map(reports.url, read_data)
 
 }
 
