@@ -1,7 +1,7 @@
 #' Filter links corresponds to a specific year using the function output get_address
 #' 
 #' @param year year that you want to extract the reports
-#' @address address list or the outout from get_addess function
+#' @param address list or the outout from get_addess function
 #' @author Thiyanga S Talagala
 #' @export
 filter_year_wer <- function(year, address){
