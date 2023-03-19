@@ -29,6 +29,8 @@ get_addresses <- function(url){
 a <- "https://www.epid.gov.lk"
 ad.list
 
+convert_wer_to_tidy <- function(starting.date, starting.week){
+
 combine <- function(url.part2){
   paste("https://www.epid.gov.lk",url.part2,sep="")
 }
@@ -36,6 +38,8 @@ combine <- function(url.part2){
 combine(ad.list[1])
 
 purrr::map(ad.list, combine)
+
+}
 
 
 
