@@ -6,3 +6,4 @@
 ^revdep$
 ^README\.Rmd$
 ^README-.*\.png$
+^hexsticker$
