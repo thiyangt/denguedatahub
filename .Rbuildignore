@@ -7,3 +7,6 @@
 ^README\.Rmd$
 ^README-.*\.png$
 ^hexsticker$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
