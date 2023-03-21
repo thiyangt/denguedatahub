@@ -12,6 +12,7 @@ link2021 <- filter_year_wer(2021, ad.list[1:9])
 url2022 <- "https://www.epid.gov.lk/web/index.php?option=com_content&view=article&id=148&Itemid=449&lang=en"
 ad.list2022 <- get_addresses(url2022)
 link2022 <- filter_year_wer(2022, ad.list2022)
+length(link2022) #52
 
 # 2023
 ad.list <- get_addresses("http://www.epid.gov.lk/web/index.php?option=com_content&view=article&id=148&Itemid=449&lang=en")
