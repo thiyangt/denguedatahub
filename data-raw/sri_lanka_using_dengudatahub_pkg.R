@@ -3,31 +3,32 @@ library(purrr)
 library(here)
 
 # 2020
-link2020 <- ""
-ad.list2020 <- get_addresses(url2020)
+link2020 <- "https://www.epid.gov.lk/web/index.php?option=com_content&view=article&id=148&Itemid=449&lang=en"
+ad.list2020 <- get_addresses(link2020)
 link2020 <- filter_year_wer(2020, ad.list2020)
 length(link2020) #52
 data2020 <- convert_srilanka_wer_to_tidy(year=2020, url.part2=link2020, 
-                                         start.date.first = "2022-01-01",
-                                         end.date.first = "2022-01-07",
-                                         start.date.last = "2022-12-24", 
-                                         end.date.last = "2022-12-30",
-                                         week.no=c(53, 1:51))
+                                         start.date.first = "2019-12-21",
+                                         end.date.first = "2019-12-27",
+                                         start.date.last = "2020-12-12", 
+                                         end.date.last = "2020-12-18",
+                                         week.no=c(52, 1:51))
 data2020
+save(data2020, file=here("data-raw", "sl", "data2020.rda"))
 
 
 # 2021
-link2021 <- ""
-ad.list2021 <- get_addresses(url2021)
+link2021 <- "https://www.epid.gov.lk/web/index.php?option=com_content&view=article&id=148&Itemid=449&lang=en"
+ad.list2021 <- get_addresses(link2021)
 link2021 <- filter_year_wer(2021, ad.list2021)
-length(link2021) #
+length(link2021) # 53
 data2021 <- convert_srilanka_wer_to_tidy(year=2021, url.part2=link2021, 
-                                         start.date.first = "2022-01-01",
-                                         end.date.first = "2022-01-07",
-                                         start.date.last = "2022-12-24", 
-                                         end.date.last = "2022-12-30",
-                                         week.no=c(53, 1:51))
-data2022
+                                         start.date.first = "2020-12-19",
+                                         end.date.first = "2020-12-25",
+                                         start.date.last = "2021-12-18", 
+                                         end.date.last = "2021-12-24",
+                                         week.no=c(52, 1:52))
+data2021
 
 
 

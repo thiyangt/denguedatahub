@@ -67,6 +67,13 @@ convert_srilanka_wer_to_tidy <- function(year,url.part1="https://www.epid.gov.lk
                    end.date,
                    district,
                    cases)
+  
+
+    
+    
+    
+  }
+  
 }
 #'@examples
 #'ad.list <- get_addresses("http://www.epid.gov.lk/web/index.php?option=com_content&view=article&id=148&Itemid=449&lang=en")
