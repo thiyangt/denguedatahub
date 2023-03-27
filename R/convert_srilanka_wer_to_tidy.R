@@ -25,18 +25,26 @@ convert_srilanka_wer_to_tidy <- function(year, url.part1="https://www.epid.gov.l
                                         pages = 3, 
                                         guess = FALSE, 
                                         output = "data.frame")
-    tbl <- tibble::tibble(x =table2[1][[1]][2:27, 1])
+    tbl <- tibble::tibble(x =table2[1][[1]][2:27, 1], y =table2[1][[1]][2:27, 2])
     if(tbl$x[[1]] == "Colombo"){
       tbl2 <- tibble::tibble("district" =table2[1][[1]][2:27, 1])
       cases1 <- tibble::tibble(x =table2[1][[1]][2:27, 2])
       cases2 <- tidyr::separate(cases1, x, "cases")
       tbl2$cases <- as.numeric(cases2$cases)
+      tbl4 <-tbl2
     } else {
-    tbl2 <- tidyr::separate(tbl,x, c("district", "cases"))
-    tbl2$cases <- as.numeric(tbl2$cases)
-    # extract missing cases from the second column
+    tbl2 <- tidyr::separate(tbl,x, c("district", "cases1"))
+    tbl3 <- tidyr::separate(tbl2, y, c("cases2", "cases3", "cases4"))
+    # replace missing value in cases1 from cases 2
+
+    tbl4 <- tbl3 %>% 
+      dplyr::mutate(cases = dplyr::coalesce(cases1, cases2))
+    tbl4$cases <- as.numeric(tbl4$cases)
+    tbl4 <- tbl4 %>% dplyr::select("district", "cases")
+ 
+    
     }
-    tbl2
+    tbl4
   }
   
   reports.url <- unlist(reports.url)

@@ -18,29 +18,31 @@ View(data2020)
 save(data2020, file=here("data-raw", "sl", "data2020.rda"))
 
 
-# 2021
+# 2021- done
 link2021 <- "https://www.epid.gov.lk/web/index.php?option=com_content&view=article&id=148&Itemid=449&lang=en"
 ad.list2021 <- get_addresses(link2021)
 link2021 <- filter_year_wer(2021, ad.list2021)
 length(link2021) # 53
-#data2021 <- convert_srilanka_wer_to_tidy(year=2021, url.part2=link2021, 
-#                                         start.date.first = "2020-12-19",
-#                                         end.date.first = "2020-12-25",
-#                                         start.date.last = "2021-12-18", 
-#                                         end.date.last = "2021-12-24",
-#                                         week.no=c(52, 1:52))
-year=2021
-url.part2=link2021
-start.date.first = "2020-12-19"
-end.date.first = "2020-12-25"
-start.date.last = "2021-12-18"
-end.date.last = "2021-12-24"
-week.no=c(52, 1:52)
-url.part1="https://www.epid.gov.lk"
+data2021 <- convert_srilanka_wer_to_tidy(year=2021, url.part2=link2021, 
+                                         start.date.first = "2020-12-19",
+                                         end.date.first = "2020-12-25",
+                                         start.date.last = "2021-12-18", 
+                                         end.date.last = "2021-12-24",
+                                         week.no=c(52, 1:52))
+
+#year=2021
+#url.part2=link2021
+#start.date.first = "2020-12-19"
+#end.date.first = "2020-12-25"
+#start.date.last = "2021-12-18"
+#end.date.last = "2021-12-24"
+#week.no=c(52, 1:52)
+#url.part1="https://www.epid.gov.lk"
 
 # run the function body lines by lines
 
 View(data2021)
+summary(data2021)
 save(data2021, file=here("data-raw", "sl", "data2021.rda"))
 
 
