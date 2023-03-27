@@ -29,7 +29,7 @@ convert_srilanka_wer_to_tidy <- function(year, url.part1="https://www.epid.gov.l
       tbl2 <- tibble::tibble("district" =table2[1][[1]][2:27, 1])
       cases1 <- tibble::tibble(x =table2[1][[1]][2:27, 2])
       cases2 <- tidyr::separate(cases1, x, "cases")
-      tbl2$cases <- cases2$cases
+      tbl2$cases <- as.numeric(cases2$cases)
     } else {
     tbl2 <- tidyr::separate(tbl,x, c("district", "cases"))
     tbl2$cases <- as.numeric(tbl2$cases)
@@ -69,7 +69,7 @@ convert_srilanka_wer_to_tidy <- function(year, url.part1="https://www.epid.gov.l
   
   # reorder columns
   
-  final %>% dplyr::select(year, 
+  final2 <- final %>% dplyr::select(year, 
                    week,
                    start.date,
                    end.date,
@@ -77,9 +77,18 @@ convert_srilanka_wer_to_tidy <- function(year, url.part1="https://www.epid.gov.l
                    cases)
   
 
+  district.name <- c("Colombo", "Gampaha",    
+  "Kalutara", "Kandy", "Matale", "NuwaraEliya",
+  "Galle", "Hambantota", "Matara", "Jaffna",     
+  "Kilinochchi", "Mannar", "Vavuniya", 
+  "Mullaitivu", "Batticaloa", "Ampara","Trincomalee",
+  "Kurunegala",
+  "Puttalam",    "Anuradhapur", "Anuradhapura", 
+  "Polonnaruwa", "Badulla",  
+  "Monaragala", "Ratnapura", "Kalmune")
     
-    
-    
+  dplyr::filter(final2, district %in% district.name)
+  
   }
   
 

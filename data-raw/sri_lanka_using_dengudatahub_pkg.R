@@ -13,7 +13,7 @@ data2020 <- convert_srilanka_wer_to_tidy(year=2020, url.part2=link2020,
                                          start.date.last = "2020-12-12", 
                                          end.date.last = "2020-12-18",
                                          week.no=c(52, 1:51))
-data2020
+View(data2020)
 save(data2020, file=here("data-raw", "sl", "data2020.rda"))
 
 
