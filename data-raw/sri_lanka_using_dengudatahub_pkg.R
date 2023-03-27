@@ -1,10 +1,11 @@
+library(rlang)
 library(denguedatahub)
 library(purrr)
 library(here)
 
 # 2020
 link2020 <- "https://www.epid.gov.lk/web/index.php?option=com_content&view=article&id=148&Itemid=449&lang=en"
-ad.list2020 <- get_addresses(link2020)
+ad.list2020 <- denguedatahub::get_addresses(link2020)
 link2020 <- filter_year_wer(2020, ad.list2020)
 length(link2020) #52
 data2020 <- convert_srilanka_wer_to_tidy(year=2020, url.part2=link2020, 
@@ -22,17 +23,29 @@ link2021 <- "https://www.epid.gov.lk/web/index.php?option=com_content&view=artic
 ad.list2021 <- get_addresses(link2021)
 link2021 <- filter_year_wer(2021, ad.list2021)
 length(link2021) # 53
-data2021 <- convert_srilanka_wer_to_tidy(year=2021, url.part2=link2021, 
-                                         start.date.first = "2020-12-19",
-                                         end.date.first = "2020-12-25",
-                                         start.date.last = "2021-12-18", 
-                                         end.date.last = "2021-12-24",
-                                         week.no=c(52, 1:52))
-data2021
+#data2021 <- convert_srilanka_wer_to_tidy(year=2021, url.part2=link2021, 
+#                                         start.date.first = "2020-12-19",
+#                                         end.date.first = "2020-12-25",
+#                                         start.date.last = "2021-12-18", 
+#                                         end.date.last = "2021-12-24",
+#                                         week.no=c(52, 1:52))
+year=2021
+url.part2=link2021
+start.date.first = "2020-12-19"
+end.date.first = "2020-12-25"
+start.date.last = "2021-12-18"
+end.date.last = "2021-12-24"
+week.no=c(52, 1:52)
+url.part1="https://www.epid.gov.lk"
+
+# run the function body lines by lines
+
+View(data2021)
+save(data2021, file=here("data-raw", "sl", "data2021.rda"))
 
 
 
-# 2022
+# 2022 - use function
 url2022 <- "https://www.epid.gov.lk/web/index.php?option=com_content&view=article&id=148&Itemid=449&lang=en"
 ad.list2022 <- get_addresses(url2022)
 link2022 <- filter_year_wer(2022, ad.list2022)
@@ -43,9 +56,10 @@ data2022 <- convert_srilanka_wer_to_tidy(year=2022, url.part2=link2022,
                                          start.date.last = "2022-12-24", 
                                          end.date.last = "2022-12-30",
                                          week.no=c(53, 1:51))
-data2022
+View(data2022)
+save(data2022, file=here("data-raw", "sl", "data2022.rda"))
 
-# 2023
+# 2023 - use function
 ad.list <- get_addresses("http://www.epid.gov.lk/web/index.php?option=com_content&view=article&id=148&Itemid=449&lang=en")
 ad.list
 link2023 <- filter_year_wer(2023, ad.list)

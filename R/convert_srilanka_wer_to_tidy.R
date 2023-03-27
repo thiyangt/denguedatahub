@@ -34,7 +34,7 @@ convert_srilanka_wer_to_tidy <- function(year, url.part1="https://www.epid.gov.l
     } else {
     tbl2 <- tidyr::separate(tbl,x, c("district", "cases"))
     tbl2$cases <- as.numeric(tbl2$cases)
-    
+    # extract missing cases from the second column
     }
     tbl2
   }
