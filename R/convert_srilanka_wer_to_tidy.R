@@ -8,6 +8,7 @@
 #' @param end.date.last endinging date of the first report week (format "2006-12-23")
 #' @param week.no report number vector
 #' @importFrom dplyr select
+#' @importFrom dplyr filter
 #' @importFrom dplyr bind_rows 
 #' @importFrom magrittr %>% 
 #' @export
