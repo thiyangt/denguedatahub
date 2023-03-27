@@ -39,6 +39,20 @@ This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
 library(denguedatahub)
+head(level_of_risk)
+```
 
+## Obtain dengue data from weekly epidemiological reports published by [Epidemiology Unit, Ministry of Health, Sri Lanka](https://www.epid.gov.lk/web/index.php?option=com_content&view=article&id=148&Itemid=449&lang=en)
+
+```{r, warning=FALSE, message=FALSE}
+ad.list <- get_addresses("http://www.epid.gov.lk/web/index.php?option=com_content&view=article&id=148&Itemid=449&lang=en")
+wer2023url <- filter_year_wer(2023, ad.list[1:9])
+data2023 <- convert_srilanka_wer_to_tidy(year=2023, url.part2=wer2023url, 
+start.date.first = "2022-12-31",
+end.date.first = "2023-01-06",
+start.date.last = "2023-01-28", 
+end.date.last = "2023-02-03",
+week.no=c(52, 1:4))
+data2023
 ```
 

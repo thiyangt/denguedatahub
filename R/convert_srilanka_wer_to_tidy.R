@@ -57,7 +57,7 @@ convert_srilanka_wer_to_tidy <- function(year, url.part1="https://www.epid.gov.l
   end.date <- rep(end.date1, times=nrow)
   
   ## cobmine tibbles in the list corresponds to each week
-  final <- map_dfr(tidy.list, dplyr::bind_rows)  
+  final <- purrr::map_dfr(tidy.list, dplyr::bind_rows)  
   
   #year
   year <- rep(year, dim(final)[1])
