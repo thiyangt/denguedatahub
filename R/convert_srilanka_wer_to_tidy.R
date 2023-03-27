@@ -26,7 +26,10 @@ convert_srilanka_wer_to_tidy <- function(year, url.part1="https://www.epid.gov.l
                                         output = "data.frame")
     tbl <- tibble::tibble(x =table2[1][[1]][2:27, 1])
     if(tbl$x[[1]] == "Colombo"){
-      
+      tbl2 <- tibble::tibble("district" =table2[1][[1]][2:27, 1])
+      cases1 <- tibble::tibble(x =table2[1][[1]][2:27, 2])
+      cases2 <- tidyr::separate(cases1, x, "cases")
+      tbl2$cases <- cases2$cases
     } else {
     tbl2 <- tidyr::separate(tbl,x, c("district", "cases"))
     tbl2$cases <- as.numeric(tbl2$cases)
@@ -54,7 +57,7 @@ convert_srilanka_wer_to_tidy <- function(year, url.part1="https://www.epid.gov.l
   end.date <- rep(end.date1, times=nrow)
   
   ## cobmine tibbles in the list corresponds to each week
-  final <- map_dfr(tidy.list, bind_rows)  
+  final <- map_dfr(tidy.list, dplyr::bind_rows)  
   
   #year
   year <- rep(year, dim(final)[1])
@@ -66,7 +69,7 @@ convert_srilanka_wer_to_tidy <- function(year, url.part1="https://www.epid.gov.l
   
   # reorder columns
   
-  final %>% select(year, 
+  final %>% dplyr::select(year, 
                    week,
                    start.date,
                    end.date,
@@ -79,7 +82,7 @@ convert_srilanka_wer_to_tidy <- function(year, url.part1="https://www.epid.gov.l
     
   }
   
-}
+
 #'@examples
 #'ad.list <- get_addresses("http://www.epid.gov.lk/web/index.php?option=com_content&view=article&id=148&Itemid=449&lang=en")
 #'wer2023url <- filter_year_wer(2023, ad.list[1:9])
