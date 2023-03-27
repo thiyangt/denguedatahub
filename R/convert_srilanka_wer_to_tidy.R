@@ -11,7 +11,7 @@
 #' @importFrom dplyr bind_rows 
 #' @importFrom magrittr %>% 
 #' @export
-convert_srilanka_wer_to_tidy <- function(year,url.part1="https://www.epid.gov.lk",
+convert_srilanka_wer_to_tidy <- function(year, url.part1="https://www.epid.gov.lk",
                                         url.part2, start.date.first, end.date.first,start.date.last, end.date.last,week.no){
   
   combine <- function(url.part2){
@@ -25,8 +25,13 @@ convert_srilanka_wer_to_tidy <- function(year,url.part1="https://www.epid.gov.lk
                                         guess = FALSE, 
                                         output = "data.frame")
     tbl <- tibble::tibble(x =table2[1][[1]][2:27, 1])
+    if(tbl$x[[1]] == "Colombo"){
+      
+    } else {
     tbl2 <- tidyr::separate(tbl,x, c("district", "cases"))
     tbl2$cases <- as.numeric(tbl2$cases)
+    
+    }
     tbl2
   }
   
