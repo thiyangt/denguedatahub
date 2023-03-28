@@ -42,6 +42,12 @@ library(denguedatahub)
 head(level_of_risk)
 ```
 
+## Sri Lanka Weekly Dengue Cases
+
+```{r}
+head(srilanka_weekly_data)
+```
+
 ## Obtain dengue data from weekly epidemiological reports published by [Epidemiology Unit, Ministry of Health, Sri Lanka](https://www.epid.gov.lk/web/index.php?option=com_content&view=article&id=148&Itemid=449&lang=en)
 
 ```{r, warning=FALSE, message=FALSE}

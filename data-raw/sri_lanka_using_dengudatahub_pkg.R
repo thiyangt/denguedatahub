@@ -2,6 +2,8 @@ library(rlang)
 library(denguedatahub)
 library(purrr)
 library(here)
+library(dplyr)
+library(data.table)
 
 # 2020 done
 link2020 <- "https://www.epid.gov.lk/web/index.php?option=com_content&view=article&id=148&Itemid=449&lang=en"
@@ -78,3 +80,28 @@ end.date.last = "2023-03-03",
 week.no=c(52, 1:8))
 
 save(data2023, file=here("data-raw", "sl", "data2023.rda"))
+
+
+## Merging data
+load("~/packages/denguedatahub/data/srilanka_weekly_data.rda")
+load(here("data-raw", "sl", "data2020.rda"))
+load(here("data-raw", "sl", "data2021.rda"))
+load(here("data-raw", "sl", "data2022.rda"))
+load(here("data-raw", "sl", "data2023.rda"))
+
+srilanka_weekly_data <- srilanka_weekly_data[1:17654,]
+srilanka_weekly_data$year <- as.numeric(srilanka_weekly_data$year)
+srilanka_weekly_data$week <- as.numeric(srilanka_weekly_data$week)
+srilanka_weekly_data$start.date <- as.Date(srilanka_weekly_data$start.date)
+srilanka_weekly_data$end.date <- as.Date(srilanka_weekly_data$end.date)
+srilanka_weekly_data$district <- as.character(srilanka_weekly_data$district)
+srilanka_weekly_data$cases <- as.numeric(srilanka_weekly_data$cases)
+
+
+
+srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, data2020)
+srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, data2021)
+srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, data2022)
+srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, data2023)
+View(srilanka_weekly_data)
+save(srilanka_weekly_data, file=here("data", "srilanka_weekly_data.rda"))

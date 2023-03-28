@@ -43,6 +43,21 @@ head(level_of_risk)
 #> 6 Cape Verde   Sporadic/Uncertain  Africa
 ```
 
+## Sri Lanka Weekly Dengue Cases
+
+``` r
+head(srilanka_weekly_data)
+#> # A tibble: 6 × 6
+#>    year  week start.date end.date   district    cases
+#>   <int> <int> <IDate>    <IDate>    <chr>       <int>
+#> 1  2006    52 2006-12-23 2006-12-29 Colombo        71
+#> 2  2006    52 2006-12-23 2006-12-29 Gampaha        12
+#> 3  2006    52 2006-12-23 2006-12-29 Kalutara       12
+#> 4  2006    52 2006-12-23 2006-12-29 Kandy          20
+#> 5  2006    52 2006-12-23 2006-12-29 Matale          4
+#> 6  2006    52 2006-12-23 2006-12-29 NuwaraEliya     1
+```
+
 ## Obtain dengue data from weekly epidemiological reports published by [Epidemiology Unit, Ministry of Health, Sri Lanka](https://www.epid.gov.lk/web/index.php?option=com_content&view=article&id=148&Itemid=449&lang=en)
 
 ``` r
@@ -68,5 +83,5 @@ data2023
 #>  8  2023    52 2022-12-31 2023-01-06 Hambantota     13
 #>  9  2023    52 2022-12-31 2023-01-06 Matara         22
 #> 10  2023    52 2022-12-31 2023-01-06 Jaffna         12
-#> # … with 120 more rows
+#> # ℹ 120 more rows
 ```
