@@ -25,7 +25,10 @@ convert_srilanka_wer_to_tidy <- function(year, url.part1="https://www.epid.gov.l
                                         pages = 3, 
                                         guess = FALSE, 
                                         output = "data.frame")
-    tbl <- tibble::tibble(x =table2[1][[1]][2:27, 1], y =table2[1][[1]][2:27, 2])
+    if (year == 2020) {
+      tbl <- tibble::tibble(x =table2[1][[1]][4:29, 1], y =table2[1][[1]][4:29, 2])
+    } else {
+      tbl <- tibble::tibble(x =table2[1][[1]][2:27, 1], y =table2[1][[1]][2:27, 2])}
     if(tbl$x[[1]] == "Colombo"){
       tbl2 <- tibble::tibble("district" =table2[1][[1]][2:27, 1])
       cases1 <- tibble::tibble(x =table2[1][[1]][2:27, 2])

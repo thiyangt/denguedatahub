@@ -3,7 +3,7 @@ library(denguedatahub)
 library(purrr)
 library(here)
 
-# 2020
+# 2020 done
 link2020 <- "https://www.epid.gov.lk/web/index.php?option=com_content&view=article&id=148&Itemid=449&lang=en"
 ad.list2020 <- denguedatahub::get_addresses(link2020)
 link2020 <- filter_year_wer(2020, ad.list2020)
@@ -17,6 +17,11 @@ data2020 <- convert_srilanka_wer_to_tidy(year=2020, url.part2=link2020,
 View(data2020)
 save(data2020, file=here("data-raw", "sl", "data2020.rda"))
 
+#url.part1="https://www.epid.gov.lk"
+#url.part2 = link2020[1]
+# run function - part 1
+#url <- reports.url[[1]][1]
+#tbl <- tibble::tibble(x =table2[1][[1]][4:29, 1], y =table2[1][[1]][4:29, 2])
 
 # 2021- done
 link2021 <- "https://www.epid.gov.lk/web/index.php?option=com_content&view=article&id=148&Itemid=449&lang=en"
