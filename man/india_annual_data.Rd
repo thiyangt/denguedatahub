@@ -15,7 +15,7 @@ A tibble with 432 rows and 5 variables:
 }
 }
 \source{
-\url{https://nvbdcp.gov.in/index4.php?lang=1&level=0&linkid=431&lid=3715}
+National Center for Vector Borne Disease Control, Directorate General of Health Services, Ministry of Health and Family Welfare, Government of India.
 }
 \usage{
 india_annual_data

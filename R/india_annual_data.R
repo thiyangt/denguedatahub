@@ -8,7 +8,7 @@
 #'   \item{additional_information}{Additional information regarding collected year period}
 #'   \item{value}{Cases}
 #'    }
-#' @source \url{https://nvbdcp.gov.in/index4.php?lang=1&level=0&linkid=431&lid=3715}
+#' @source National Center for Vector Borne Disease Control, Directorate General of Health Services, Ministry of Health and Family Welfare, Government of India.
 #' @examples 
 #' head(india_annual_data)
 "india_annual_data"
