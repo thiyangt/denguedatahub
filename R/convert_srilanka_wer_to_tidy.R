@@ -10,6 +10,7 @@
 #' @importFrom dplyr select
 #' @importFrom dplyr filter
 #' @importFrom dplyr bind_rows 
+#' @importFrom tabulizer extract_tables
 #' @importFrom magrittr %>% 
 #' @export
 convert_srilanka_wer_to_tidy <- function(year, url.part1="https://www.epid.gov.lk",
