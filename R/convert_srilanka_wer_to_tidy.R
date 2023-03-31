@@ -100,8 +100,12 @@ convert_srilanka_wer_to_tidy <- function(year, url.part1="https://www.epid.gov.l
   "Polonnaruwa", "Badulla",  
   "Monaragala", "Ratnapura", "Kegalle", "Kalmune")
     
-  dplyr::filter(final2, district %in% district.name)
+  f3 <- dplyr::filter(final2, district %in% district.name)
   
+  f3$district <- dplyr::recode(f3$district, 
+                                                 Anuradhapur = "Anuradhapura",
+                                                 Kurunagala = "Kurunegala")
+  f3
   }
   
 

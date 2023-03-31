@@ -105,3 +105,11 @@ srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, data2022)
 srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, data2023)
 View(srilanka_weekly_data)
 save(srilanka_weekly_data, file=here("data", "srilanka_weekly_data.rda"))
+
+load(here::here("data", "srilanka_weekly_data.rda"))
+
+srilanka_weekly_data$district <- dplyr::recode(srilanka_weekly_data$district, 
+                                        Anuradhapur = "Anuradhapura",
+                                        Kurunagala = "Kurunegala")
+
+save(srilanka_weekly_data, file=here("data", "srilanka_weekly_data.rda"))
