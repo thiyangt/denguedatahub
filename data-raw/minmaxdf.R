@@ -66,6 +66,8 @@ new_column3 <- function(df, value, key){
 
 new_column3(tbl, values, keys)
 
+
+# The following function is working
 new_column4 <- function(df, value, key){
   
   group_var <- enquo(key)
