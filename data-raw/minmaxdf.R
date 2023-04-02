@@ -2,7 +2,7 @@
 library(tidyverse)
 sum1 <- function(df, group_var,x,y) {
   
-  group_var <- enquo(group_var)
+  group_var <- rlang::enquo(group_var)
   
   x = as.name(x)
   y = as.name(y)
