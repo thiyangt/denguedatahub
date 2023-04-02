@@ -1,11 +1,17 @@
 #' Apply min-max transformation
 #' @param 
-min_max <- function(data, variable.to.minmax, local=FALSE, key){
+min_max <- function(data, variable.to.minmax, local=FALSE, group.var){
+  
+  group_var <- enquo(group.var)
+  
+  x = as.name(x)
+  y = as.name(y)
+  
+  
   
   if (local=FALSE){
-    vtm <- eval(pars$data)[, as.numeric(pars$variable.to.minmax)]
-    range.vtm <- range(vtm)
-    data$min.max <- (vtm - range.vtm[1])(range.vtm[2] - range.vtm[1])
+    range.vtm <- range(variable.to.minmax)
+    data$min.max <- (variable.to.minmax - range.vtm[1])(range.vtm[2] - range.vtm[1])
     tbl <- as_tibble(data)
   } else{
     
