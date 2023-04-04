@@ -87,3 +87,11 @@ colnames(level_of_risk) <- c("country",
 #                              "level_of_risk.rda"))
 usethis::use_data(level_of_risk, overwrite = TRUE)
 usethis::use_r("level_of_risk")
+
+## 2023 April 4
+library(tidyverse)
+load("~/packages/denguedatahub/data/level_of_risk.rda")
+level_of_risk <- level_of_risk %>%
+  filter(level_of_risk != "Risk varies based on region. See map.")
+View(level_of_risk)
+usethis::use_data(level_of_risk, overwrite = TRUE)
