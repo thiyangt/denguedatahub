@@ -23,7 +23,7 @@ Imports:
     tidyr,
     rlang (>= 0.4.11)
 Depends: 
-    R (>= 2.10)
+    R (>= 3.5.0)
 SystemRequirements: Java (>= 7.0)
 Remotes: ropensci/tabulizerjars
 LazyData: true
