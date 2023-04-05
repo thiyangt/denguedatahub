@@ -13,6 +13,8 @@ knitr::opts_chunk$set(
 )
 ```
 
+[![R-CMD-check](https://github.com/thiyangt/denguedatahub/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/thiyangt/denguedatahub/actions/workflows/R-CMD-check.yaml)
+
 # denguedatahub <img src="hexsticker/logo.png" align="right" height="180"/>
 
 The goal of `denguedatahub` is to provide the research community with a unified dataset by collecting worldwide dengue-related data, merged with exogenous variables helpful for a better understanding of the spread of dengue and the reproducibility of research.

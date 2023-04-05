@@ -1,6 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+[![R-CMD-check](https://github.com/thiyangt/denguedatahub/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/thiyangt/denguedatahub/actions/workflows/R-CMD-check.yaml)
+
 # denguedatahub <img src="hexsticker/logo.png" align="right" height="180"/>
 
 The goal of `denguedatahub` is to provide the research community with a
