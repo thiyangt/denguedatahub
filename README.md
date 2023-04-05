@@ -3,10 +3,7 @@
 
 # denguedatahub <img src="hexsticker/logo.png" align="right" height="180"/>
 
-<!-- badges: start -->
-<!-- badges: end -->
-
-The goal of denguedatahub is to provide the research community with a
+The goal of `denguedatahub` is to provide the research community with a
 unified dataset by collecting worldwide dengue-related data, merged with
 exogenous variables helpful for a better understanding of the spread of
 dengue and the reproducibility of research.
@@ -49,7 +46,7 @@ head(level_of_risk)
 head(srilanka_weekly_data)
 #> # A tibble: 6 × 6
 #>    year  week start.date end.date   district    cases
-#>   <int> <int> <IDate>    <IDate>    <chr>       <int>
+#>   <dbl> <dbl> <date>     <date>     <chr>       <dbl>
 #> 1  2006    52 2006-12-23 2006-12-29 Colombo        71
 #> 2  2006    52 2006-12-23 2006-12-29 Gampaha        12
 #> 3  2006    52 2006-12-23 2006-12-29 Kalutara       12
