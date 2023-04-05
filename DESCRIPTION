@@ -25,8 +25,7 @@ Imports:
 Depends: 
     R (>= 3.5.0)
 SystemRequirements: Java (>= 7.0)
-Remotes: 
-  ropensci/tabulizerjars,
+Remotes: ropensci/tabulizerjars,
   ropensci/tabulizer
 LazyData: true
 Suggests: 
