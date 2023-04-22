@@ -1,6 +1,6 @@
 Package: denguedatahub
 Title: A Tidy Format Datasets of Dengue by Country 
-Version: 1.0.2
+Version: 1.0.3
 Authors@R: 
     person("Thiyanga S.", "Talagala", , "ttalagala@sjp.ac.lk", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-0656-9789"))
@@ -18,4 +18,5 @@ Depends:
     R (>= 3.5.0)
 LazyData: true
 Suggests: 
-    roxygen2
+    roxygen2,
+    tsibble
