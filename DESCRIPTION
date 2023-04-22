@@ -1,6 +1,6 @@
 Package: denguedatahub
 Title: A Tidy Format Datasets of Dengue by Country 
-Version: 1.0.1
+Version: 1.0.2
 Authors@R: 
     person("Thiyanga S.", "Talagala", , "ttalagala@sjp.ac.lk", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-0656-9789"))
@@ -12,19 +12,10 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
 Imports: 
-    magrittr,
-    rvest,
-    stringr,
-    xml2,
     dplyr,
-    tabulizer,
-    purrr,
-    tibble,
-    tidyr,
     rlang (>= 0.4.11)
 Depends: 
     R (>= 3.5.0)
-SystemRequirements: Java (>= 7.0)
 LazyData: true
 Suggests: 
     roxygen2

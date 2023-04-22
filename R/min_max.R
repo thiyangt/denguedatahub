@@ -11,7 +11,7 @@ min_max <- function(data, variable.to.minmax, local=FALSE, group.var){
     
     cases = as.name(variable.to.minmax)
     
-    data.tbl <- data %>% 
+    data.tbl <- data |> 
       dplyr::mutate(
         min.cases = min(!!enquo(cases)),
         max.cases = max(!!enquo(cases)),
@@ -23,7 +23,7 @@ min_max <- function(data, variable.to.minmax, local=FALSE, group.var){
     group_var <- as.name(group.var)
     cases = as.name(variable.to.minmax)
     
-    data.tbl <- data %>% dplyr::group_by(!!enquo(group_var)) %>% 
+    data.tbl <- data |> dplyr::group_by(!!enquo(group_var)) |>
       dplyr::mutate(
         min.group = min(!!enquo(cases)),
         max.group = max(!!enquo(cases)),

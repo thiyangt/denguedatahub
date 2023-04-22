@@ -45,42 +45,39 @@ head(level_of_risk)
 ## Sri Lanka Weekly Dengue Cases
 
 ``` r
-head(srilanka_weekly_data)
-#> # A tibble: 6 × 6
-#>    year  week start.date end.date   district    cases
-#>   <dbl> <dbl> <date>     <date>     <chr>       <dbl>
-#> 1  2006    52 2006-12-23 2006-12-29 Colombo        71
-#> 2  2006    52 2006-12-23 2006-12-29 Gampaha        12
-#> 3  2006    52 2006-12-23 2006-12-29 Kalutara       12
-#> 4  2006    52 2006-12-23 2006-12-29 Kandy          20
-#> 5  2006    52 2006-12-23 2006-12-29 Matale          4
-#> 6  2006    52 2006-12-23 2006-12-29 NuwaraEliya     1
-```
-
-## Obtain dengue data from weekly epidemiological reports published by [Epidemiology Unit, Ministry of Health, Sri Lanka](https://www.epid.gov.lk/web/index.php?option=com_content&view=article&id=148&Itemid=449&lang=en)
-
-``` r
-ad.list <- get_addresses("http://www.epid.gov.lk/web/index.php?option=com_content&view=article&id=148&Itemid=449&lang=en")
-wer2023url <- filter_year_wer(2023, ad.list[1:9])
-data2023 <- convert_srilanka_wer_to_tidy(year=2023, url.part2=wer2023url, 
-start.date.first = "2022-12-31",
-end.date.first = "2023-01-06",
-start.date.last = "2023-01-28", 
-end.date.last = "2023-02-03",
-week.no=c(52, 1:4))
-data2023
-#> # A tibble: 130 × 6
+srilanka_weekly_data
+#> # A tibble: 21,960 × 6
 #>     year  week start.date end.date   district    cases
 #>    <dbl> <dbl> <date>     <date>     <chr>       <dbl>
-#>  1  2023    52 2022-12-31 2023-01-06 Colombo        25
-#>  2  2023    52 2022-12-31 2023-01-06 Gampaha        23
-#>  3  2023    52 2022-12-31 2023-01-06 Kalutara       74
-#>  4  2023    52 2022-12-31 2023-01-06 Kandy          50
-#>  5  2023    52 2022-12-31 2023-01-06 Matale         25
-#>  6  2023    52 2022-12-31 2023-01-06 NuwaraEliya     3
-#>  7  2023    52 2022-12-31 2023-01-06 Galle          28
-#>  8  2023    52 2022-12-31 2023-01-06 Hambantota     13
-#>  9  2023    52 2022-12-31 2023-01-06 Matara         22
-#> 10  2023    52 2022-12-31 2023-01-06 Jaffna         12
-#> # ℹ 120 more rows
+#>  1  2006    52 2006-12-23 2006-12-29 Colombo        71
+#>  2  2006    52 2006-12-23 2006-12-29 Gampaha        12
+#>  3  2006    52 2006-12-23 2006-12-29 Kalutara       12
+#>  4  2006    52 2006-12-23 2006-12-29 Kandy          20
+#>  5  2006    52 2006-12-23 2006-12-29 Matale          4
+#>  6  2006    52 2006-12-23 2006-12-29 NuwaraEliya     1
+#>  7  2006    52 2006-12-23 2006-12-29 Galle           1
+#>  8  2006    52 2006-12-23 2006-12-29 Hambanthota     1
+#>  9  2006    52 2006-12-23 2006-12-29 Matara         11
+#> 10  2006    52 2006-12-23 2006-12-29 Jaffna          0
+#> # ℹ 21,950 more rows
+```
+
+## World
+
+``` r
+world_annual
+#> # A tibble: 6,750 × 4
+#>    entity      code   year incidence
+#>    <chr>       <chr> <dbl>     <dbl>
+#>  1 Afghanistan AFG    1990     23371
+#>  2 Afghanistan AFG    1991     25794
+#>  3 Afghanistan AFG    1992     29766
+#>  4 Afghanistan AFG    1993     32711
+#>  5 Afghanistan AFG    1994     34268
+#>  6 Afghanistan AFG    1995     35823
+#>  7 Afghanistan AFG    1996     37397
+#>  8 Afghanistan AFG    1997     38862
+#>  9 Afghanistan AFG    1998     39660
+#> 10 Afghanistan AFG    1999     39987
+#> # ℹ 6,740 more rows
 ```
