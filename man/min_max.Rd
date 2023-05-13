@@ -15,6 +15,9 @@ min_max(data, variable.to.minmax, local = FALSE, group.var)
 
 \item{group.var}{variables that you need to create group-wise}
 }
+\value{
+tibble with minmax transformed applied
+}
 \description{
 Apply min-max transformation
 }

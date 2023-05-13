@@ -3,6 +3,7 @@
 #' @param variable.to.minmax the variable that we want to tranform using the min-max transformation
 #' @param local TRUE if you need to apply local minmax transformation
 #' @param group.var variables that you need to create group-wise
+#' @return tibble with minmax transformed applied
 #' @importFrom rlang enquo
 #' @export
 min_max <- function(data, variable.to.minmax, local=FALSE, group.var){
