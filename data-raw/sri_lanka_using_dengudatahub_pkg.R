@@ -122,4 +122,8 @@ srilanka_weekly_data$district <- dplyr::recode(srilanka_weekly_data$district,
 
 save(srilanka_weekly_data, file=here("data", "srilanka_weekly_data.rda"))
 
+# 5 June 2023
 
+data("srilanka_weekly_data")
+srilanka_weekly_data <- srilanka_weekly_data[-(17655:17680),]
+save(srilanka_weekly_data, file=here::here("data", "srilanka_weekly_data.rda"))
