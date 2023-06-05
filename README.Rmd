@@ -27,6 +27,10 @@ Check out the website at https://denguedatahub.netlify.app/
 
 You can install the development version of denguedatahub from [GitHub](https://github.com/) with:
 
+```r
+install.packages("denguedatahub")
+```
+
 ``` r
 # install.packages("devtools")
 devtools::install_github("thiyangt/denguedatahub")
@@ -37,6 +41,7 @@ devtools::install_github("thiyangt/denguedatahub")
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
+library(tsibble)
 library(denguedatahub)
 head(level_of_risk)
 ```
