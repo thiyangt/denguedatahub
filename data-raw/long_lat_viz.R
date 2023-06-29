@@ -58,5 +58,8 @@ ggplot(worlddata2019, aes(x = long,
   theme(legend.position = "bottom") + 
   scale_fill_brewer(palette = "Dark2")
 
-world_data <- worlddata
+world_annual <- worlddata %>%
+  rename(longitude = long,
+         latitude = lat)
+
 usethis::use_data(world_annual, overwrite = TRUE)
