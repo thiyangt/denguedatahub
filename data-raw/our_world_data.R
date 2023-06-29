@@ -11,3 +11,5 @@ View(world_annual)
 colnames(world_annual) <- c("entity", "code", "year", "incidence")
 #save(world_annual, file=here("data", "world_annual.rda"))
 usethis::use_data(world_annual, overwrite = TRUE)
+# Teminated on 29 June 2023
+# See the file long_lat_viz.R
