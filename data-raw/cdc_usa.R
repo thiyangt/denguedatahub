@@ -48,4 +48,3 @@ view(cdc_usa_dengue_infection)
 save(cdc_usa_dengue_infection, 
      file=here("data", 
                "cdc_usa_dengue_infection.rda"))
-
