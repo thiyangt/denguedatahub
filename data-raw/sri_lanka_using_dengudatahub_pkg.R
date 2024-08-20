@@ -1,3 +1,5 @@
+# Note 2024 (get_addresses is now not available in the current version)
+
 library(rlang)
 library(denguedatahub)
 library(purrr)
