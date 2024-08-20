@@ -1,5 +1,6 @@
 # Note 2024 (get_addresses is now not available in the current version)
-
+# Following code is written older version of denguedatahub (Most of
+# these functions are deprecated now as at of 2024 Aug 20)
 library(rlang)
 library(denguedatahub)
 library(purrr)
