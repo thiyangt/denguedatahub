@@ -2,7 +2,7 @@
 #'
 #' @param url url of the webpage that you intend to download files. The default is URL of the weekly epidemiological reports page
 #' @param volume.number Volume number of the epidemiological reports (Volumes corresponds to year)
-#' @return Pdf files corresponds to the volume number you specified inside the folder.name
+#' @return URLS of PDF files corresponds to the volume number
 #' @importFrom rvest read_html
 #' @importFrom rvest html_nodes
 #' @importFrom rvest html_attr
@@ -12,7 +12,6 @@
 #' @export
 get_pdflinks_srilanka <- function(url="https://www.epid.gov.lk/weekly-epidemiological-report/weekly-epidemiological-report",volume.number){
   base_url <- url
-  dir.create(folder.name)
   # Read the webpage content
   webpage <- read_html(base_url)
   

@@ -1,7 +1,7 @@
 #' Read weekly epidemiological reports and convert dengue data into tidy format
 #' 
-#' 
-#' @param report.url URL of all WER that you want to extract tables and convert into tidy
+#' @param year year
+#' @param report.url URL of all WER that you want to extract tables and convert into tidy (The URLs can be extracted from the get_pdflinks_srilanka function).
 #' @param start.date.first starting date of the first report week (format "2006-12-23")
 #' @param end.date.first endinging date of the first report week (format "2006-12-23")
 #' @param start.date.last starting date of the last report week (format "2006-12-23")
@@ -10,20 +10,14 @@
 #' @importFrom dplyr select
 #' @importFrom dplyr filter
 #' @importFrom dplyr bind_rows 
-#' @importFrom tabulizer extract_tables
-#' @importFrom lifecycle deprecate_warn
+#' @importFrom tabulapdf extract_tables
 #' @importFrom magrittr %>% 
 #' @export
-convert_srilanka_wer_to_tidy <- function(report.url, start.date.first, end.date.first,start.date.last, end.date.last,week.no){
+convert_srilankawer_to_tidy <- function(year, report.url, start.date.first, end.date.first,start.date.last, end.date.last,week.no){
   
-  
-  combine <- function(url.part2){
-    paste(url.part1,url.part2,sep="")
-  }
-  reports.url <- purrr::map(url.part2, combine)
-  
+
   read_data <- function(url){
-    table2 <- tabulizer::extract_tables(url,
+    table2 <- extract_tables(url,
                                         pages = 3, 
                                         guess = FALSE, 
                                         output = "data.frame")

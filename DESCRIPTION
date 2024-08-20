@@ -21,9 +21,10 @@ Imports:
     utils,
     purrr,
     xml2,
+    tabulapdf,
     rlang (>= 0.4.11)
 Depends: 
-    R (>= 4.4.0)
+    R (>= 4.4.1)
 LazyData: true
 Suggests: 
     roxygen2,
