@@ -112,3 +112,4 @@ convert_slwer_to_tidy <- function(year, reports.url, start.date.first, end.date.
 
 
 #'@examples
+links <- c()

@@ -37,10 +37,13 @@ for (link in vol_51_links) {
 ##Step 1:  Get PDF links corresponds to 2024
 library(denguedatahub)
 link2024 <- get_pdflinks_srilanka(url="https://www.epid.gov.lk/weekly-epidemiological-report/weekly-epidemiological-report", volume.number="Vol_51")
+length(link2024) #30
+link2024[[1]][1] ## No 30 WER
+link2024[[30]][1] ## No 1 WER
 data2024 <- convert_slwer_to_tidy(year=2024, 
                                          reports.url=link2024, 
                                          start.date.first = "2023-12-23",
                                          end.date.first = "2023-12-29",
-                                         start.date.last = "2024-06-15", 
-                                         end.date.last = "2024-06-21",
+                                         start.date.last = "2024-07-13", 
+                                         end.date.last = "2024-7-19",
                                          week.no=c(52, 1:29))

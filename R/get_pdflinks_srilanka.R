@@ -23,7 +23,7 @@ get_pdflinks_srilanka <- function(url="https://www.epid.gov.lk/weekly-epidemiolo
   
   # Filter to keep only PDFs from the specified volume number
   volume_links <- pdf_links[grepl(volume.number, pdf_links)]
-  volume_links
+  rev(volume_links)
 }
 #'@examples
 #'get_pdflinks_srilanka(url="https://www.epid.gov.lk/weekly-epidemiological-report/weekly-epidemiological-report", volume.number="Vol_51")
