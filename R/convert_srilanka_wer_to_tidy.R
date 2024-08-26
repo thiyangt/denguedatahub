@@ -17,7 +17,6 @@
 convert_srilanka_wer_to_tidy <- function(year, url.part1="https://www.epid.gov.lk",
                                          url.part2, start.date.first, end.date.first,start.date.last, end.date.last,week.no){
   
-  deprecate_warn("2.0.0", "convert_srilanka_wer_to_tidy()", "convert_srilankawer_to_tidy()")
   combine <- function(url.part2){
     paste(url.part1,url.part2,sep="")
   }

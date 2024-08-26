@@ -32,3 +32,14 @@ for (link in vol_51_links) {
   download.file(link, destfile = pdf_name, mode = "wb")
   message(paste("Downloaded:", pdf_name))
 }
+
+## Extract tidydata from PDF
+##Step 1:  Get PDF links corresponds to 2024
+library(denguedatahub)
+link2024 <- get_pdflinks_srilanka(url="https://www.epid.gov.lk/weekly-epidemiological-report/weekly-epidemiological-report", volume.number="Vol_51")
+data2024 <- convert_srilanka_wer_to_tidy(year=2024, url.part2=link2024, 
+                                         start.date.first = "2023-12-23",
+                                         end.date.first = "2023-12-29",
+                                         start.date.last = "2024-06-15", 
+                                         end.date.last = "2024-06-21",
+                                         week.no=c(52, 1:25))
