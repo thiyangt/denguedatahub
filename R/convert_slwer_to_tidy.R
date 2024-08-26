@@ -1,7 +1,6 @@
 #' Read weekly epidemiological reports and convert dengue data into tidy format
 #' @param year year 
-#' @param url.part1 first part of the URL, by default "https://www.epid.gov.lk"
-#' @param url.part2 URL address vector obtained from filter_year_wer_link
+#' @param reports.url URL address vector obtained from get_pdflinks_srilanka
 #' @param start.date.first starting date of the first report week (format "2006-12-23")
 #' @param end.date.first endinging date of the first report week (format "2006-12-23")
 #' @param start.date.last starting date of the last report week (format "2006-12-23")
@@ -14,46 +13,47 @@
 #' @importFrom lifecycle deprecate_warn
 #' @importFrom magrittr %>% 
 #' @export
-convert_srilanka_wer_to_tidy <- function(year, url.part1="https://www.epid.gov.lk",
-                                         url.part2, start.date.first, end.date.first,start.date.last, end.date.last,week.no){
+convert_slwer_to_tidy <- function(year, reports.url, start.date.first, end.date.first,start.date.last, end.date.last,week.no){
   
-  deprecate_warn("2.0.0", "convert_srilanka_wer_to_tidy()", "convert_srilankawer_to_tidy()")
-  combine <- function(url.part2){
-    paste(url.part1,url.part2,sep="")
-  }
-  reports.url <- purrr::map(url.part2, combine)
+  #combine <- function(url.part2){
+  #  paste(url.part1,url.part2,sep="")
+ # }
+  #reports.url <- purrr::map(url.part2, combine)
   
   read_data <- function(url){
     table2 <- tabulapdf::extract_tables(url,
                                         pages = 3, 
                                         guess = FALSE, 
-                                        output = "data.frame")
+                                        output = "tibble")
     if (year == 2020) {
       tbl <- tibble::tibble(x =table2[1][[1]][4:29, 1], y =table2[1][[1]][4:29, 2])
     } else {
       tbl <- tibble::tibble(x =table2[1][[1]][2:27, 1], y =table2[1][[1]][2:27, 2])}
-    if(tbl$x[[1]] == "Colombo"){
-      tbl2 <- tibble::tibble("district" =table2[1][[1]][2:27, 1])
-      cases1 <- tibble::tibble(x =table2[1][[1]][2:27, 2])
-      cases2 <- tidyr::separate(cases1, x, "cases")
-      tbl2$cases <- as.numeric(cases2$cases)
-      tbl4 <-tbl2
-    } else {
-      tbl2 <- tidyr::separate(tbl,x, c("district", "cases1"))
-      tbl3 <- tidyr::separate(tbl2, y, c("cases2", "cases3", "cases4"))
+   # if(tbl$x[[1]] == "Colombo"){
+   #   tbl2 <- tibble::tibble("district" =table2[1][[1]][2:27, 1])
+   #   cases1 <- tibble::tibble(x =table2[1][[1]][2:27, 2])
+   #   cases2 <- tidyr::separate(cases1, x, "cases")
+   #   tbl2$cases <- as.numeric(cases2$cases)
+   #   tbl4 <-tbl2
+   # } else {
+      tbl2 <- tbl |>
+        dplyr::select(1)   # Select the first column
+      colnames(tbl2) <- "x"
+      df <- as.vector(tbl2$x)[[1]]
+      tbl3 <- tibble::tibble(x=df)
+
+      tbl4 <- tidyr::separate(tbl3, x, c("District", "Cases1", "Cases2"))
       # replace missing value in cases1 from cases 2
-      
-      tbl4 <- tbl3 %>% 
-        dplyr::mutate(cases = dplyr::coalesce(cases1, cases2))
-      tbl4$cases <- as.numeric(tbl4$cases)
-      tbl4 <- tbl4 %>% dplyr::select("district", "cases")
-      
-      
-    }
+      nuwaraeliyarow <- which(tbl4$District == "Nuwara")
+      tbl4$District[nuwaraeliyarow] <- "NuwaraEliya"
+      tbl4$Cases1[nuwaraeliyarow] <- as.numeric(tbl4$Cases2[nuwaraeliyarow])
+      tbl4 <- tbl4 |> dplyr::select(1:2)
+      colnames(tbl4) <- c("district", "cases")
+ #   }
     tbl4
   }
   
-  reports.url <- unlist(reports.url)
+  #reports.url <- unlist(reports.url)
   tidy.list <- purrr::map(reports.url, read_data)
   
   ## week variable
@@ -112,12 +112,3 @@ convert_srilanka_wer_to_tidy <- function(year, url.part1="https://www.epid.gov.l
 
 
 #'@examples
-#'ad.list <- get_addresses("http://www.epid.gov.lk/web/index.php?option=com_content&view=article&id=148&Itemid=449&lang=en")
-#'wer2023url <- filter_year_wer(2023, ad.list[1:9])
-#'data2023 <- convert_srilanka_wer_to_tidy(year=2023, url.part2=wer2023url, 
-#'start.date.first = "2022-12-31",
-#'end.date.first = "2023-01-06",
-#'start.date.last = "2023-01-28", 
-#'end.date.last = "2023-02-03",
-#'week.no=c(52, 1:4))
-#'data2023
