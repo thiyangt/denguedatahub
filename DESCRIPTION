@@ -31,3 +31,7 @@ LazyData: true
 Suggests: 
     roxygen2,
     tsibble
+SystemRequirements: Java (>= 7.0):
+    openjdk-11-jdk (deb),
+    java-11-openjdk.x86_64 (rpm),
+    openjdk@11 (brew)
