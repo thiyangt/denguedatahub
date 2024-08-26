@@ -10,7 +10,7 @@
 #' @importFrom dplyr select
 #' @importFrom dplyr filter
 #' @importFrom dplyr bind_rows 
-#' @importFrom tabulizer extract_tables
+#' @importFrom tabulapdf extract_tables
 #' @importFrom lifecycle deprecate_warn
 #' @importFrom magrittr %>% 
 #' @export
@@ -24,7 +24,7 @@ convert_srilanka_wer_to_tidy <- function(year, url.part1="https://www.epid.gov.l
   reports.url <- purrr::map(url.part2, combine)
   
   read_data <- function(url){
-    table2 <- tabulizer::extract_tables(url,
+    table2 <- tabulapdf::extract_tables(url,
                                         pages = 3, 
                                         guess = FALSE, 
                                         output = "data.frame")
