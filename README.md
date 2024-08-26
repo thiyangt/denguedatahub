@@ -39,6 +39,9 @@ library(tsibble)
 #> The following objects are masked from 'package:base':
 #> 
 #>     intersect, setdiff, union
+```
+
+``` r
 library(denguedatahub)
 head(level_of_risk)
 #> # A tibble: 6 × 3
@@ -56,9 +59,9 @@ head(level_of_risk)
 
 ``` r
 srilanka_weekly_data
-#> # A tibble: 21,934 × 6
+#> # A tibble: 21,960 × 6
 #>     year  week start.date end.date   district    cases
-#>  * <dbl> <dbl> <date>     <date>     <chr>       <dbl>
+#>    <dbl> <dbl> <date>     <date>     <chr>       <dbl>
 #>  1  2006    52 2006-12-23 2006-12-29 Colombo        71
 #>  2  2006    52 2006-12-23 2006-12-29 Gampaha        12
 #>  3  2006    52 2006-12-23 2006-12-29 Kalutara       12
@@ -69,7 +72,7 @@ srilanka_weekly_data
 #>  8  2006    52 2006-12-23 2006-12-29 Hambanthota     1
 #>  9  2006    52 2006-12-23 2006-12-29 Matara         11
 #> 10  2006    52 2006-12-23 2006-12-29 Jaffna          0
-#> # ℹ 21,924 more rows
+#> # ℹ 21,950 more rows
 ```
 
 ## World
