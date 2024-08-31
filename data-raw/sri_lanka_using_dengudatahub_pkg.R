@@ -135,76 +135,14 @@ save(srilanka_weekly_data, file=here::here("data", "srilanka_weekly_data.rda"))
 # 31 August 2024
 library(tidyverse)
 ## Working on 2020 data
-data("srilanka_weekly_data")
-dim(srilanka_weekly_data)
-View(srilanka_weekly_data)
-dim(srilanka_weekly_data) #21934     6
-srilanka_weekly_data <- srilanka_weekly_data |>
-  filter(year != 2023)
-dim(srilanka_weekly_data) # 21700     6
-unique(data2023$district)
-a <- unique(data2023$district) == unique(srilanka_weekly_data$district)
-table(a)
-unique(data2023$district)[8]
-unique(srilanka_weekly_data$district)[8]
-data2023$district <- dplyr::recode(data2023$district, 
-                                   Hambantota = "Hambanthota")
-a <- unique(data2023$district) == unique(srilanka_weekly_data$district)
-table(a)
-data2023$year <- as.numeric(data2023$year)
-data2023$week <- as.numeric(data2023$week)
-data2023$start.date <- as.Date(data2023$start.date)
-data2023$end.date <- as.Date(data2023$end.date)
-data2023$district <- as.character(data2023$district)
-data2023$cases <- as.numeric(data2023$cases)
+## Remove week 52 year==2020 data
+
 
 ## Working on 2021 data
-data("srilanka_weekly_data")
-dim(srilanka_weekly_data)
-View(srilanka_weekly_data)
-dim(srilanka_weekly_data) #21934     6
-srilanka_weekly_data <- srilanka_weekly_data |>
-  filter(year != 2023)
-dim(srilanka_weekly_data) # 21700     6
-unique(data2023$district)
-a <- unique(data2023$district) == unique(srilanka_weekly_data$district)
-table(a)
-unique(data2023$district)[8]
-unique(srilanka_weekly_data$district)[8]
-data2023$district <- dplyr::recode(data2023$district, 
-                                   Hambantota = "Hambanthota")
-a <- unique(data2023$district) == unique(srilanka_weekly_data$district)
-table(a)
-data2023$year <- as.numeric(data2023$year)
-data2023$week <- as.numeric(data2023$week)
-data2023$start.date <- as.Date(data2023$start.date)
-data2023$end.date <- as.Date(data2023$end.date)
-data2023$district <- as.character(data2023$district)
-data2023$cases <- as.numeric(data2023$cases)
+## No errors
 
 ## Working on 2022 data
-data("srilanka_weekly_data")
-dim(srilanka_weekly_data)
-View(srilanka_weekly_data)
-dim(srilanka_weekly_data) #21934     6
-srilanka_weekly_data <- srilanka_weekly_data |>
-  filter(year != 2023)
-dim(srilanka_weekly_data) # 21700     6
-unique(data2023$district)
-a <- unique(data2023$district) == unique(srilanka_weekly_data$district)
-table(a)
-unique(data2023$district)[8]
-unique(srilanka_weekly_data$district)[8]
-data2023$district <- dplyr::recode(data2023$district, 
-                                   Hambantota = "Hambanthota")
-a <- unique(data2023$district) == unique(srilanka_weekly_data$district)
-table(a)
-data2023$year <- as.numeric(data2023$year)
-data2023$week <- as.numeric(data2023$week)
-data2023$start.date <- as.Date(data2023$start.date)
-data2023$end.date <- as.Date(data2023$end.date)
-data2023$district <- as.character(data2023$district)
-data2023$cases <- as.numeric(data2023$cases)
+## No errors
 
 ## Working on 2023 data
 data("srilanka_weekly_data")
