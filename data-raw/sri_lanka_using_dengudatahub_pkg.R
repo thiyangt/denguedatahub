@@ -130,3 +130,67 @@ save(srilanka_weekly_data, file=here("data", "srilanka_weekly_data.rda"))
 data("srilanka_weekly_data")
 srilanka_weekly_data <- srilanka_weekly_data[-(17655:17680),]
 save(srilanka_weekly_data, file=here::here("data", "srilanka_weekly_data.rda"))
+
+
+# 31 August 2024
+library(tidyverse)
+## Working on 2023 data
+data("srilanka_weekly_data")
+dim(srilanka_weekly_data)
+View(srilanka_weekly_data)
+dim(srilanka_weekly_data) #21934     6
+srilanka_weekly_data <- srilanka_weekly_data |>
+  filter(year != 2023)
+dim(srilanka_weekly_data) # 21700     6
+unique(data2023$district)
+a <- unique(data2023$district) == unique(srilanka_weekly_data$district)
+table(a)
+unique(data2023$district)[8]
+unique(srilanka_weekly_data$district)[8]
+data2023$district <- dplyr::recode(data2023$district, 
+                                               Hambantota = "Hambanthota")
+a <- unique(data2023$district) == unique(srilanka_weekly_data$district)
+table(a)
+data2023$year <- as.numeric(data2023$year)
+data2023$week <- as.numeric(data2023$week)
+data2023$start.date <- as.Date(data2023$start.date)
+data2023$end.date <- as.Date(data2023$end.date)
+data2023$district <- as.character(data2023$district)
+data2023$cases <- as.numeric(data2023$cases)
+
+## Working on 2024 data
+b <- unique(data2024$district) == unique(srilanka_weekly_data$district)
+table(b)
+unique(data2024$district)[8]
+unique(srilanka_weekly_data$district)[8]
+data2024$district <- dplyr::recode(data2024$district, 
+                                   Hambantota = "Hambanthota")
+bb <- unique(data2024$district) == unique(srilanka_weekly_data$district)
+table(bb)
+data2024$year <- as.numeric(data2024$year)
+data2024week <- as.numeric(data2024$week)
+data2024$start.date <- as.Date(data2024$start.date)
+data2024$end.date <- as.Date(data2024$end.date)
+data2024$district <- as.character(data2024$district)
+data2024$cases <- as.numeric(data2024$cases)
+
+## Merge 2023 and 2024 data
+srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, data2023)
+srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, data2024)
+dim(srilanka_weekly_data) #23805     6
+table(srilanka_weekly_data$year)
+
+## Checking issues
+
+y2020 <- srilanka_weekly_data |> filter(year == 2020)
+View(y2020)
+unique(y2020$week)
+
+y2021 <- srilanka_weekly_data |> filter(year == 2021)
+View(y2021)
+unique(y2021$week)
+
+
+y2022 <- srilanka_weekly_data |> filter(year == 2022)
+View(y2022)
+unique(y2022$week)
