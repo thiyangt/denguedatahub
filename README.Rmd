@@ -49,11 +49,14 @@ head(level_of_risk)
 ## Sri Lanka Weekly Dengue Cases
 
 ```{r}
-srilanka_weekly_data
+head(srilanka_weekly_data)
 ```
 
 ## World
 
-```{r}
-world_annual
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+world_annual |>
+  filter(region=="Afghanistan") |>
+  head()
 ```
