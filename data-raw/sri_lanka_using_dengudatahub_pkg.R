@@ -216,3 +216,217 @@ unique(y2022$week)
 
 
 ## Correcting the data error since 2020
+## September 3
+## Packages
+library(tidyverse)
+library(here)
+## Filter data upto 2019
+load("~/denguedatahub/data/srilanka_weekly_data.rda")
+srilanka_weekly_data <- srilanka_weekly_data |>
+  filter(year < 2020)
+View(srilanka_weekly_data)
+
+## Year2020
+#load("~/denguedatahub/data-raw/sl_version1/data2020.rda")
+#View(data2020)
+#data2020 <- data2020 |>
+#  filter(start.date != "2019-12-21")
+#View(data2020)
+
+write.csv(data2020, here("data-raw", "sl", "data2020.csv"))
+## After this I manually enter missing kegalle and kalmune values
+data2020 <- read_csv(here("data-raw", "sl", "data2020.csv"))
+View(data2020)
+data2020 <- data2020 |> select(-1)
+View(data2020)
+data2020$year <- as.numeric(data2020$year)
+data2020$week <- as.numeric(data2020$week)
+data2020$start.date <- as.Date(data2020$start.date)
+data2020$end.date <- as.Date(data2020$end.date)
+data2020$district <- as.character(data2020$district)
+data2020$cases <- as.numeric(data2020$cases)
+colnames(data2020)
+
+load("~/denguedatahub/data-raw/sl_version1/data2021.rda")
+View(data2021)
+week52.2020 <- data2021 |>
+  filter(start.date == "2020-12-19")
+length(week52.2020$year)
+week52.2020$year <- rep(2020, 26)
+View(week52.2020)
+colnames(week52.2020)
+week52.2020$year <- as.numeric(week52.2020$year)
+week52.2020$week <- as.numeric(week52.2020$week)
+week52.2020$start.date <- as.Date(week52.2020$start.date)
+week52.2020$end.date <- as.Date(week52.2020$end.date)
+week52.2020$district <- as.character(week52.2020$district)
+week52.2020$cases <- as.numeric(week52.2020$cases)
+data2020 <- dplyr::bind_rows(data2020, week52.2020)
+save(data2020, file=here("data-raw", "sl", "data2020.rda"))
+
+## Year2021
+data2021 <- data2021 |>
+  filter(start.date != "2020-12-19")
+View(data2021)
+dim(data2021)
+load("~/denguedatahub/data-raw/sl_version1/data2022.rda")
+View(data2022)
+week53.2021 <- data2022 |>
+  filter(week == 53)
+dim(week53.2021) # 26 6
+week53.2021$start.date <- as.Date(rep("2021-12-25", 26))
+week53.2021$end.date <- as.Date(rep("2021-12-31", 26))
+week53.2021$year <- rep(2021, 26)
+week53.2021$year <- as.numeric(week53.2021$year)
+week53.2021$week <- as.numeric(week53.2021$week)
+week53.2021$start.date <- as.Date(week53.2021$start.date)
+week53.2021$end.date <- as.Date(week53.2021$end.date)
+week53.2021$district <- as.character(week53.2021$district)
+week53.2021$cases <- as.numeric(week53.2021$cases)
+View(week53.2021)
+
+data2021 <- dplyr::bind_rows(data2021, week53.2021)
+View(data2021)
+save(data2021, file=here("data-raw", "sl", "data2021.rda"))
+
+
+## Year 2022
+load("~/denguedatahub/data-raw/sl_version1/data2022.rda")
+View(data2022)
+sd <- data2022$start.date
+length(sd) # 1352
+ed <- data2022$end.date
+length(ed) #  1352
+data2022 <- data2022 |>
+  filter(week != 53)
+dim(data2022) #1326  6
+data2022$start.date <- as.Date(sd[1:1326])
+data2022$end.date <- as.Date(ed[1:1326])
+View(data2022)
+
+data2022$year <- as.numeric(data2022$year)
+data2022$week <- as.numeric(data2022$week)
+data2022$start.date <- as.Date(data2022$start.date)
+data2022$end.date <- as.Date(data2022$end.date)
+data2022$district <- as.character(data2022$district)
+data2022$cases <- as.numeric(data2022$cases)
+
+load("~/denguedatahub/data-raw/sl_version1/data2023.rda")
+View(data2023)
+week52.2022 <- data2023 |>
+  filter(start.date == "2022-12-24")
+View(week52.2022)
+week52.2022$year <- rep(2022, 26)
+week52.2022$year <- as.numeric(week52.2022$year)
+View(week52.2022)
+
+week52.2022$year <- as.numeric(week52.2022$year)
+week52.2022$week <- as.numeric(week52.2022$week)
+week52.2022$start.date <- as.Date(week52.2022$start.date)
+week52.2022$end.date <- as.Date(week52.2022$end.date)
+week52.2022$district <- as.character(week52.2022$district)
+week52.2022$cases <- as.numeric(week52.2022$cases)
+
+
+data2022 <- dplyr::bind_rows(data2022, week52.2022)
+View(data2022)
+save(data2022, file=here("data-raw", "sl", "data2022.rda"))
+
+
+## Year 2023
+load("~/denguedatahub/data-raw/sl_version1/data2023.rda")
+View(data2023)
+data2023 <- data2023 |>
+  filter(start.date != "2022-12-24")
+View(data2023)
+dim(data2023) #1326  6
+load("~/denguedatahub/data-raw/sl_version1/data2024.rda")
+week52.2023 <- data2024 |>
+  filter(start.date == "2023-12-23")
+week52.2023$year <- rep(2023, 26)
+week52.2023$year <- as.numeric(week52.2023$year)
+week52.2023$week <- as.numeric(week52.2023$week)
+week52.2023$start.date <- as.Date(week52.2023$start.date)
+week52.2023$end.date <- as.Date(week52.2023$end.date)
+week52.2023$district <- as.character(week52.2023$district)
+week52.2023$cases <- as.numeric(week52.2023$cases)
+
+data2023$year <- as.numeric(data2023$year)
+data2023$week <- as.numeric(data2023$week)
+data2023$start.date <- as.Date(data2023$start.date)
+data2023$end.date <- as.Date(data2023$end.date)
+data2023$district <- as.character(data2023$district)
+data2023$cases <- as.numeric(data2023$cases)
+
+
+data2023 <- dplyr::bind_rows(data2023, week52.2023)
+View(data2023)
+dim(data2023) # 1352   6
+save(data2023, file=here("data-raw", "sl", "data2023.rda"))
+
+
+## Year 2024
+load("~/denguedatahub/data-raw/sl_version1/data2024.rda")
+data2024 <- data2024 |>
+  filter(start.date != "2023-12-23")
+View(data2024)
+save(data2024, file=here("data-raw", "sl", "data2024.rda"))
+
+
+##
+rm(list = ls())
+library(tidyverse)
+library(here)
+load("~/denguedatahub/data/srilanka_weekly_data.rda")
+srilanka_weekly_data <- srilanka_weekly_data |>
+  filter(year < 2020)
+table(srilanka_weekly_data$year)
+
+load("~/denguedatahub/data-raw/sl/data2020.rda")
+load("~/denguedatahub/data-raw/sl/data2021.rda")
+load("~/denguedatahub/data-raw/sl/data2022.rda")
+load("~/denguedatahub/data-raw/sl/data2023.rda")
+load("~/denguedatahub/data-raw/sl/data2024.rda")
+
+
+data2023$district <- dplyr::recode(data2023$district, 
+                                   Hambantota = "Hambanthota")
+a <- unique(data2023$district) == unique(srilanka_weekly_data$district)
+table(a)
+data2023$year <- as.numeric(data2023$year)
+data2023$week <- as.numeric(data2023$week)
+data2023$start.date <- as.Date(data2023$start.date)
+data2023$end.date <- as.Date(data2023$end.date)
+data2023$district <- as.character(data2023$district)
+data2023$cases <- as.numeric(data2023$cases)
+
+data2024$district <- dplyr::recode(data2024$district, 
+                                   Hambantota = "Hambanthota")
+bb <- unique(data2024$district) == unique(srilanka_weekly_data$district)
+table(bb)
+data2024$year <- as.numeric(data2024$year)
+data2024week <- as.numeric(data2024$week)
+data2024$start.date <- as.Date(data2024$start.date)
+data2024$end.date <- as.Date(data2024$end.date)
+data2024$district <- as.character(data2024$district)
+data2024$cases <- as.numeric(data2024$cases)
+
+srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, 
+                                         data2020)
+srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, 
+                                         data2021)
+srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, 
+                                         data2022)
+srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, 
+                                         data2023)
+srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, 
+                                         data2024)
+sort(unique(srilanka_weekly_data$district))
+srilanka_weekly_data$district <- dplyr::recode(srilanka_weekly_data$district, 
+                                               Anuradhapur = "Anuradhapura" )
+srilanka_weekly_data$district <- dplyr::recode(srilanka_weekly_data$district, 
+                                   Hambantota = "Hambanthota")
+sort(unique(srilanka_weekly_data$district))
+
+save(srilanka_weekly_data, file=here("data",  "srilanka_weekly_data.rda"))
+table(srilanka_weekly_data$year)

@@ -1,6 +1,5 @@
 # 2024 Aug 31
-## 2022: Volume 50
-load("~/denguedatahub/data-raw/sl/data2020.rda")
+load("~/denguedatahub/data-raw/sl_version1/data2020.rda")
 View(data2020)
 data2020 <- filter(data2020, week !=52)
 View(data2020)
