@@ -5,15 +5,16 @@
 \alias{level_of_risk}
 \title{Level of Dengue risk around the world}
 \format{
-A tibble with 148 rows and 3 variables:
+A tibble with 293 rows and 4 variables:
 \describe{
 \item{country}{factor Name of the country}
-\item{level_of_risk`}{factor Dengue risk level. There are three categories: Frequent or continuous, Sporadic or uncertain. “Frequent or continuous” risk means that either frequent outbreaks occur or transmission is ongoing. “Sporadic or uncertain” risk means that the risk varies and is unpredictable and that country-level data is not available.}
+\item{level_of_risk`}{factor Dengue risk level. There are three categories: Frequent or continuous, Sporadic or uncertain. Frequent/continuous risk: evidence of more than 10 dengue cases in at least 3 of the previous 10 years. Sporadic/uncertain risk: evidence of at least 1 locally acquired dengue case during the last 10 years. }
 \item{region}{factor Region}
+\item{last_accessed}{information last accessed date}
 }
 }
 \source{
-\url{https://www.cdc.gov/dengue/areaswithrisk/around-the-world.html}
+The 2023 accessed from \url{https://www.cdc.gov/dengue/areaswithrisk/around-the-world.html} and 2024 accessed from \url{https://www.cdc.gov/dengue/areas-with-risk/index.html}.
 }
 \usage{
 level_of_risk

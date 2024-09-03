@@ -1,0 +1,156 @@
+country,level_of_risk,region
+Burkina Faso,Frequent/Continuous,Africa
+Djibouti,Frequent/Continuous,Africa
+Egypt,Frequent/Continuous,Africa
+Eritrea,Frequent/Continuous,Africa
+Ethiopia,Frequent/Continuous,Africa
+Kenya,Frequent/Continuous,Africa
+Reunion,Frequent/Continuous,Africa
+Somalia,Frequent/Continuous,Africa
+Sudan,Frequent/Continuous,Africa
+United Republic of Tanzania,Frequent/Continuous,Africa
+Benin,Sporadic/Uncertain,Africa
+Burundi,Sporadic/Uncertain,Africa
+Cameroon,Sporadic/Uncertain,Africa
+Cape Verde,Sporadic/Uncertain,Africa
+Central African Republic,Sporadic/Uncertain,Africa
+Chad,Sporadic/Uncertain,Africa
+Comoros,Sporadic/Uncertain,Africa
+Congo,Sporadic/Uncertain,Africa
+Cote d'Ivoire,Sporadic/Uncertain,Africa
+Democratic Republic of the Congo,Sporadic/Uncertain,Africa
+Equatorial Guinea,Sporadic/Uncertain,Africa
+Gabon,Sporadic/Uncertain,Africa
+Gambia,Sporadic/Uncertain,Africa
+Ghana,Sporadic/Uncertain,Africa
+Guinea,Sporadic/Uncertain,Africa
+Guinea-Bissau,Sporadic/Uncertain,Africa
+Liberia,Sporadic/Uncertain,Africa
+Madagascar,Sporadic/Uncertain,Africa
+Malawi,Sporadic/Uncertain,Africa
+Mali,Sporadic/Uncertain,Africa
+Mauritania,Sporadic/Uncertain,Africa
+Mauritius,Sporadic/Uncertain,Africa
+Mayotte,Sporadic/Uncertain,Africa
+Mozambique,Sporadic/Uncertain,Africa
+Namibia,Sporadic/Uncertain,Africa
+Niger,Sporadic/Uncertain,Africa
+Nigeria,Sporadic/Uncertain,Africa
+Rwanda,Sporadic/Uncertain,Africa
+São Tomé and Príncipe,Sporadic/Uncertain,Africa
+Senegal,Sporadic/Uncertain,Africa
+Seychelles,Sporadic/Uncertain,Africa
+Sierra Leone,Sporadic/Uncertain,Africa
+South Sudan,Sporadic/Uncertain,Africa
+Togo,Sporadic/Uncertain,Africa
+Uganda,Sporadic/Uncertain,Africa
+Zambia,Sporadic/Uncertain,Africa
+Zimbabwe,Sporadic/Uncertain,Africa
+Angola,Risk varies by region,Africa
+Anguilla,Frequent/Continuous,Americas
+Antigua and Barbuda,Frequent/Continuous,Americas
+Aruba,Frequent/Continuous,Americas
+Bahamas,Frequent/Continuous,Americas
+Barbados,Frequent/Continuous,Americas
+Belize,Frequent/Continuous,Americas
+Bolivia,Frequent/Continuous,Americas
+Brazil,Frequent/Continuous,Americas
+British Virgin Islands,Frequent/Continuous,Americas
+Cayman Islands,Frequent/Continuous,Americas
+Colombia,Frequent/Continuous,Americas
+Costa Rica,Frequent/Continuous,Americas
+Cuba,Frequent/Continuous,Americas
+Dominica,Frequent/Continuous,Americas
+Dominican Republic,Frequent/Continuous,Americas
+Ecuador,Frequent/Continuous,Americas
+El Salvador,Frequent/Continuous,Americas
+French Guiana,Frequent/Continuous,Americas
+Grenada,Frequent/Continuous,Americas
+Guadeloupe,Frequent/Continuous,Americas
+Guatemala,Frequent/Continuous,Americas
+Guyana,Frequent/Continuous,Americas
+Haiti,Frequent/Continuous,Americas
+Honduras,Frequent/Continuous,Americas
+Jamaica,Frequent/Continuous,Americas
+Martinique,Frequent/Continuous,Americas
+Netherlands Antilles,Frequent/Continuous,Americas
+Nicaragua,Frequent/Continuous,Americas
+Panama,Frequent/Continuous,Americas
+Paraguay,Frequent/Continuous,Americas
+Puerto Rico,Frequent/Continuous,Americas
+Saint Barthelemy,Frequent/Continuous,Americas
+Saint Kitts and Nevis,Frequent/Continuous,Americas
+Saint Lucia,Frequent/Continuous,Americas
+Saint Maarten,Frequent/Continuous,Americas
+Saint Vincent and the Grenadines,Frequent/Continuous,Americas
+Suriname,Frequent/Continuous,Americas
+Trinidad and Tobago,Frequent/Continuous,Americas
+Turks and Caicos,Frequent/Continuous,Americas
+United States Virgin Islands,Frequent/Continuous,Americas
+Venezuela,Frequent/Continuous,Americas
+Bermuda,Sporadic/Uncertain,Americas
+Curacao,Sporadic/Uncertain,Americas
+Montserrat,Sporadic/Uncertain,Americas
+Uruguay,Sporadic/Uncertain,Americas
+Argentina,Risk varies by region,Americas
+Chile,Risk varies by region,Americas
+Mexico,Risk varies by region,Americas
+Peru,Risk varies by region,Americas
+United States,Risk varies by region,Americas
+Bangladesh,Frequent/Continuous,Asia
+Bhutan,Frequent/Continuous,Asia
+Brunei Darussalam,Frequent/Continuous,Asia
+Cambodia,Frequent/Continuous,Asia
+Hong Kong,Frequent/Continuous,Asia
+India,Frequent/Continuous,Asia
+Indonesia,Frequent/Continuous,Asia
+Lao People's Democratic Republic,Frequent/Continuous,Asia
+Malaysia,Frequent/Continuous,Asia
+Myanmar,Frequent/Continuous,Asia
+Nepal,Frequent/Continuous,Asia
+Philippines,Frequent/Continuous,Asia
+Singapore,Frequent/Continuous,Asia
+Sri Lanka,Frequent/Continuous,Asia
+Taiwan,Frequent/Continuous,Asia
+Thailand,Frequent/Continuous,Asia
+Timor-Leste,Frequent/Continuous,Asia
+Vietnam,Frequent/Continuous,Asia
+Yemen,Frequent/Continuous,Asia
+Afghanistan,Sporadic/Uncertain,Asia
+Aksai Chin,Sporadic/Uncertain,Asia
+Iran (Islamic Republic of),Sporadic/Uncertain,Asia
+Jammu and Kashmir,Sporadic/Uncertain,Asia
+Japan,Sporadic/Uncertain,Asia
+Macau,Sporadic/Uncertain,Asia
+Oman,Sporadic/Uncertain,Asia
+Korea (Republic of),Sporadic/Uncertain,Asia
+China,Risk varies by region,Asia
+Pakistan,Risk varies by region,Asia
+Saudi Arabia,Risk varies by region,Asia
+France,Sporadic/Uncertain,Europe
+Italy,Sporadic/Uncertain,Europe
+Madeira Islands,Sporadic/Uncertain,Europe
+Spain,Sporadic/Uncertain,Europe
+American Samoa,Frequent/Continuous,Oceania/Pacific Islands
+Cook Islands,Frequent/Continuous,Oceania/Pacific Islands
+Fiji,Frequent/Continuous,Oceania/Pacific Islands
+French Polynesia,Frequent/Continuous,Oceania/Pacific Islands
+Maldives,Frequent/Continuous,Oceania/Pacific Islands
+Marshall Islands,Frequent/Continuous,Oceania/Pacific Islands
+Micronesia (Federated States of),Frequent/Continuous,Oceania/Pacific Islands
+New Caledonia,Frequent/Continuous,Oceania/Pacific Islands
+Palau,Frequent/Continuous,Oceania/Pacific Islands
+Papua New Guinea,Frequent/Continuous,Oceania/Pacific Islands
+Solomon Islands,Frequent/Continuous,Oceania/Pacific Islands
+Tonga,Frequent/Continuous,Oceania/Pacific Islands
+Guam,Sporadic/Uncertain,Oceania/Pacific Islands
+Kiribati,Sporadic/Uncertain,Oceania/Pacific Islands
+Nauru,Sporadic/Uncertain,Oceania/Pacific Islands
+Niue,Sporadic/Uncertain,Oceania/Pacific Islands
+Northern Mariana Islands,Sporadic/Uncertain,Oceania/Pacific Islands
+Samoa,Sporadic/Uncertain,Oceania/Pacific Islands
+Tokelau,Sporadic/Uncertain,Oceania/Pacific Islands
+Tuvalu,Sporadic/Uncertain,Oceania/Pacific Islands
+Vanuatu,Sporadic/Uncertain,Oceania/Pacific Islands
+Wallis and Futuna,Sporadic/Uncertain,Oceania/Pacific Islands
+Australia,Risk varies by region,Oceania/Pacific Islands

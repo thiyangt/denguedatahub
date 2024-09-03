@@ -5,7 +5,7 @@
 \alias{srilanka_weekly_data}
 \title{Weekly number of dengue fever infections in Sri Lanka}
 \format{
-A tibble with 18772 rows and 6 variables:
+A tibble with 23815 rows and 6 variables:
 \describe{
 \item{year}{year}
 \item{week}{week number}
@@ -16,7 +16,7 @@ A tibble with 18772 rows and 6 variables:
 }
 }
 \source{
-\url{https://ourworldindata.org/grapher/dengue-incidence}
+Weekly Epidemiological Reports, Ministry of Health, Sri Lanka
 }
 \usage{
 srilanka_weekly_data
