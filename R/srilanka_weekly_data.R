@@ -9,7 +9,7 @@
 #'   \item{district}{district name}
 #'   \item{cases}{Number of dengue cases}
 #'    }
-#' @source Weekly Epidemiological Reports, Ministry of Health, Sri Lanka
+#' @source Weekly Epidemiological Reports, Epidemiology Unit, Ministry of Health, Sri Lanka. 
 #' @examples 
 #' head(srilanka_weekly_data)
 "srilanka_weekly_data"

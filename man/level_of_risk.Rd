@@ -8,7 +8,7 @@
 A tibble with 293 rows and 4 variables:
 \describe{
 \item{country}{factor Name of the country}
-\item{level_of_risk`}{factor Dengue risk level. There are three categories: Frequent or continuous, Sporadic or uncertain. Frequent/continuous risk: evidence of more than 10 dengue cases in at least 3 of the previous 10 years. Sporadic/uncertain risk: evidence of at least 1 locally acquired dengue case during the last 10 years. }
+\item{level_of_risk`}{factor Dengue risk level. There are three categories: Frequent or continuous, Sporadic or uncertain, Varies by region. Frequent/continuous risk: evidence of more than 10 dengue cases in at least 3 of the previous 10 years. Sporadic/uncertain risk: evidence of at least 1 locally acquired dengue case during the last 10 years. }
 \item{region}{factor Region}
 \item{last_accessed}{information last accessed date}
 }

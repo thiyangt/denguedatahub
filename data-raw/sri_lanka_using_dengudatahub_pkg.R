@@ -428,5 +428,6 @@ srilanka_weekly_data$district <- dplyr::recode(srilanka_weekly_data$district,
                                    Hambantota = "Hambanthota")
 sort(unique(srilanka_weekly_data$district))
 
-save(srilanka_weekly_data, file=here("data",  "srilanka_weekly_data.rda"))
+save(srilanka_weekly_data, file=here("data-raw",  "srilanka_weekly_data.rda"))
 table(srilanka_weekly_data$year)
+usethis::use_data(srilanka_weekly_data, overwrite = TRUE)

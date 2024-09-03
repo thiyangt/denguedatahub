@@ -16,7 +16,7 @@ A tibble with 23815 rows and 6 variables:
 }
 }
 \source{
-Weekly Epidemiological Reports, Ministry of Health, Sri Lanka
+Weekly Epidemiological Reports, Epidemiology Unit, Ministry of Health, Sri Lanka.
 }
 \usage{
 srilanka_weekly_data
