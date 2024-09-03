@@ -20,7 +20,7 @@ A tibble with 6750 rows and 4 variables:
 }
 }
 \source{
-“Data Page: Dengue fever infections”, part of the following publication: Esteban Ortiz-Ospina and Max Roser (2016) - “Global Health”. Data adapted from IHME, Global Burden of Disease. Retrieved from \url{https://ourworldindata.org/grapher/dengue-incidence} \link{online resource}
+\url{https://ourworldindata.org/grapher/dengue-incidence}
 }
 \usage{
 world_annual
