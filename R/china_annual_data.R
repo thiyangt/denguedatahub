@@ -1,4 +1,4 @@
-#' Dengue related data in china
+#' Dengue related data in China
 #' @description Annual indigenous and imported dengue cases in mainland China, 2005-2020
 #' @format A tibble with 16 rows and 5 variables:
 #' \describe{
