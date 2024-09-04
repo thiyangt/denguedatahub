@@ -34,4 +34,4 @@ SystemRequirements: Java (>= 7.0):
     java-11-openjdk.x86_64 (rpm),
     openjdk@11 (brew)
 Depends: 
-    R (>= 2.10)
+    R (>= 3.5.0)
