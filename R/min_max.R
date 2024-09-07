@@ -14,9 +14,9 @@ min_max <- function(data, variable.to.minmax, local=FALSE, group.var){
     
     data.tbl <- data |> 
       dplyr::mutate(
-        min.cases = min(!!enquo(cases)),
-        max.cases = max(!!enquo(cases)),
-        minmax.cases = (!!enquo(cases) - min(!!enquo(cases)))/(max(!!enquo(cases)) - min(!!enquo(cases)))
+        min.cases = min(!!enquo(cases), na.rm=TRUE),
+        max.cases = max(!!enquo(cases), na.rm=TRUE),
+        minmax.cases = (!!enquo(cases) - min(!!enquo(cases),na.rm=TRUE))/(max(!!enquo(cases), na.rm=TRUE) - min(!!enquo(cases), na.rm=TRUE))
       )
     
   } else {
@@ -26,9 +26,9 @@ min_max <- function(data, variable.to.minmax, local=FALSE, group.var){
     
     data.tbl <- data |> dplyr::group_by(!!enquo(group_var)) |>
       dplyr::mutate(
-        min.group = min(!!enquo(cases)),
-        max.group = max(!!enquo(cases)),
-        minmax.group = (!!enquo(cases) - min(!!enquo(cases)))/(max(!!enquo(cases)) - min(!!enquo(cases)))
+        min.group = min(!!enquo(cases), na.rm=TRUE),
+        max.group = max(!!enquo(cases), na.rm=TRUE),
+        minmax.group = (!!enquo(cases) - min(!!enquo(cases), na.rm=TRUE))/(max(!!enquo(cases), na.rm=TRUE) - min(!!enquo(cases), na.rm=TRUE))
       
       )
     }
