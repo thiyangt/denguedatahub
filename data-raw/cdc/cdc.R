@@ -40,3 +40,20 @@ colnames(cdc_dengue_casesbyjurisdiction) <- c("Year",
                                 "Legend",
                                 "Notes")
 usethis::use_data(cdc_dengue_casesbyjurisdiction, overwrite = TRUE)
+
+## Dataset 5
+cdc_local_dengue_cases<- read_csv("data-raw/cdc/Locally acquired dengue cases by year, 2010 - 2023.csv")
+View(cdc_local_dengue_cases)
+colnames(cdc_local_dengue_cases) <- c("Year",
+                                      "Travel.status",
+                                      "Reported.cases")
+usethis::use_data(cdc_local_dengue_cases, overwrite = TRUE)
+
+
+## Dataset 6
+cdc_travel_associated_dengue_cases <- read_csv("data-raw/cdc/Travel associated dengue cases by year, 2010 - 2023.csv")
+View(cdc_travel_associated_dengue_cases)
+colnames(cdc_travel_associated_dengue_cases) <- c("Year",
+                                      "Travel.status",
+                                      "Reported.cases")
+usethis::use_data(cdc_travel_associated_dengue_cases, overwrite = TRUE)
