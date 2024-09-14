@@ -40,7 +40,7 @@ convert_slwer_to_tidy <- function(year, reports.url, start.date.first, end.date.
     tbl2 <- tibble::tibble("district" =table2[1][[1]][2:27, 1])
     district <- as.vector(tbl2$district)[[1]]
  
-    tbl2 <- tibble(district=district)
+    tbl2 <- tibble::tibble(district=district)
     cases1 <- tibble::tibble(x =table2[1][[1]][2:27, 2])
     df <- cases1$x[1]
     colnames(df) <- "x"
