@@ -48,24 +48,25 @@ data2024 <- convert_slwer_to_tidy(year=2024,
                                          end.date.last = "2024-08-02",
                                          week.no=c(52, 1:31))
 View(data2024)
+summary(data2024)
 library(here)
-#save(data2024, file=here("data-raw","sl" ,"data2024.rda"))
+save(data2024, file=here("data-raw","sl" ,"data2024.rda"))
 
 
 ## Sep 14, 2024
 #load("~/denguedatahub/data-raw/sl/data2024.rda")
 #library(readr)
 #library(here)
-write_csv(data2024, file=here("data-raw",
+#write_csv(data2024, file=here("data-raw",
                               "sl",
                               "data2024.csv"))
 
 ## 8
-data2024_8 <- convert_slwer_to_tidy(year=2024, 
-                                  reports.url=link2024[[9]][1], 
-                                  start.date.first = "2024-02-17",
-                                  end.date.first = "2024-02-23",
-                                  start.date.last = "2024-02-17", 
-                                  end.date.last = "2024-02-23",
-                                  week.no=c(8))
-View(data2024_8)
+#data2024_8 <- convert_slwer_to_tidy(year=2024, 
+#                                  reports.url=link2024[[9]][1], 
+#                                  start.date.first = "2024-02-17",
+#                                  end.date.first = "2024-02-23",
+#                                  start.date.last = "2024-02-17", 
+#                                  end.date.last = "2024-02-23",
+#                                  week.no=c(8))
+#View(data2024_8)

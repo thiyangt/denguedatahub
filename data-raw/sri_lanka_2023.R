@@ -1,4 +1,5 @@
 # 2024 Aug 31
+## 2024 Sep 14
 ## 2023: Volume 50
 
 library(rlang)
@@ -29,3 +30,4 @@ data2023 <- convert_slwer_to_tidy(year=2023,
 View(data2023)
 library(here)
 save(data2023, file=here("data-raw","sl" ,"data2023.rda"))
+write_csv(data2023, file=here("data-raw", "sl", "data2023.csv"))

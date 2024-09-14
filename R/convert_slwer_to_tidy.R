@@ -50,6 +50,8 @@ convert_slwer_to_tidy <- function(year, reports.url, start.date.first, end.date.
     colnames(tbl4) <- c("district", "cases")
     nuwaraeliyarow <- which(tbl4$district == "Nuwara")
     tbl4$district[nuwaraeliyarow] <- "NuwaraEliya"
+    tbl4$cases <- as.numeric(tbl4$cases)
+    tbl4$district <- as.character(tbl4$district)
     } else {
       tbl2 <- tbl |>
         dplyr::select(1)   # Select the first column
@@ -64,6 +66,8 @@ convert_slwer_to_tidy <- function(year, reports.url, start.date.first, end.date.
       tbl4$Cases1[nuwaraeliyarow] <- as.numeric(tbl4$Cases2[nuwaraeliyarow])
       tbl4 <- tbl4 |> dplyr::select(1:2)
       colnames(tbl4) <- c("district", "cases")
+      tbl4$cases <- as.numeric(tbl4$cases)
+      tbl4$district <- as.character(tbl4$district)
    }
     tbl4
   }
