@@ -36,6 +36,21 @@ convert_slwer_to_tidy <- function(year, reports.url, start.date.first, end.date.
    #   tbl2$cases <- as.numeric(cases2$cases)
    #   tbl4 <-tbl2
    # } else {
+  if(tbl[1, 1] == "Colombo"){
+    tbl2 <- tibble::tibble("district" =table2[1][[1]][2:27, 1])
+    district <- as.vector(tbl2$district)[[1]]
+ 
+    tbl2 <- tibble(district=district)
+    cases1 <- tibble::tibble(x =table2[1][[1]][2:27, 2])
+    df <- cases1$x[1]
+    colnames(df) <- "x"
+    cases2 <- tidyr::separate(df, x, c("cases"))
+    tbl2$cases <- as.numeric(cases2$cases)
+    tbl4 <- tbl2
+    colnames(tbl4) <- c("district", "cases")
+    nuwaraeliyarow <- which(tbl4$district == "Nuwara")
+    tbl4$district[nuwaraeliyarow] <- "NuwaraEliya"
+    } else {
       tbl2 <- tbl |>
         dplyr::select(1)   # Select the first column
       colnames(tbl2) <- "x"
@@ -49,7 +64,7 @@ convert_slwer_to_tidy <- function(year, reports.url, start.date.first, end.date.
       tbl4$Cases1[nuwaraeliyarow] <- as.numeric(tbl4$Cases2[nuwaraeliyarow])
       tbl4 <- tbl4 |> dplyr::select(1:2)
       colnames(tbl4) <- c("district", "cases")
- #   }
+   }
     tbl4
   }
   
@@ -112,3 +127,12 @@ convert_slwer_to_tidy <- function(year, reports.url, start.date.first, end.date.
 
 
 #'@examples
+#'link <- "https://www.epid.gov.lk/storage/post/pdfs/en_65fc47cc869e2_Vol_51_no_09-english.pdf"
+#'data2024_8 <- convert_slwer_to_tidy(year=2024, 
+#'                                    reports.url=link2024[[9]][1], 
+#'                                    start.date.first = "2024-02-17",
+#'                                    end.date.first = "2024-02-23",
+#'                                    start.date.last = "2024-02-17", 
+#'                                    end.date.last = "2024-02-23",
+#'                                    week.no=c(8))
+#'View(data2024_8)
