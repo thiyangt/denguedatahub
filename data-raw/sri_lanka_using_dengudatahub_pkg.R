@@ -373,7 +373,7 @@ View(data2024)
 save(data2024, file=here("data-raw", "sl", "data2024.rda"))
 
 
-##
+## rerun after imputing the missing values (Sep 15, 2024)
 rm(list = ls())
 library(tidyverse)
 library(here)
@@ -395,8 +395,8 @@ a <- unique(data2023$district) == unique(srilanka_weekly_data$district)
 table(a)
 data2023$year <- as.numeric(data2023$year)
 data2023$week <- as.numeric(data2023$week)
-data2023$start.date <- as.Date(data2023$start.date)
-data2023$end.date <- as.Date(data2023$end.date)
+data2023$start.date <- as.Date(data2023$start.date, "%m/%d/%y")
+data2023$end.date <- as.Date(data2023$end.date, "%m/%d/%y")
 data2023$district <- as.character(data2023$district)
 data2023$cases <- as.numeric(data2023$cases)
 
