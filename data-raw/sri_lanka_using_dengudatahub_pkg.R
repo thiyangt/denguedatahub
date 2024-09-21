@@ -387,7 +387,14 @@ load("~/denguedatahub/data-raw/sl/data2021.rda")
 load("~/denguedatahub/data-raw/sl/data2022.rda")
 load("~/denguedatahub/data-raw/sl/data2023.rda")
 load("~/denguedatahub/data-raw/sl/data2024.rda")
+srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, 
+                                         data2020)
+srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, 
+                                         data2021)
+srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, 
+                                         data2022)
 
+##
 
 data2023$district <- dplyr::recode(data2023$district, 
                                    Hambantota = "Hambanthota")
@@ -395,10 +402,13 @@ a <- unique(data2023$district) == unique(srilanka_weekly_data$district)
 table(a)
 data2023$year <- as.numeric(data2023$year)
 data2023$week <- as.numeric(data2023$week)
-data2023$start.date <- as.Date(data2023$start.date, "%m/%d/%y")
-data2023$end.date <- as.Date(data2023$end.date, "%m/%d/%y")
+data2023$start.date <- as.Date(data2023$start.date, "%m/%d/%Y")
+data2023$end.date <- as.Date(data2023$end.date, "%m/%d/%Y")
 data2023$district <- as.character(data2023$district)
 data2023$cases <- as.numeric(data2023$cases)
+View(data2023)
+srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, 
+                                         data2023)
 
 data2024$district <- dplyr::recode(data2024$district, 
                                    Hambantota = "Hambanthota")
@@ -411,14 +421,8 @@ data2024$end.date <- as.Date(data2024$end.date)
 data2024$district <- as.character(data2024$district)
 data2024$cases <- as.numeric(data2024$cases)
 
-srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, 
-                                         data2020)
-srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, 
-                                         data2021)
-srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, 
-                                         data2022)
-srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, 
-                                         data2023)
+
+
 srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, 
                                          data2024)
 sort(unique(srilanka_weekly_data$district))
