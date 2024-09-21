@@ -374,6 +374,7 @@ save(data2024, file=here("data-raw", "sl", "data2024.rda"))
 
 
 ## rerun after imputing the missing values (Sep 15, 2024)
+## Fixed data issue in 2023 (formatting date column "%m/%d/%Y")
 rm(list = ls())
 library(tidyverse)
 library(here)
