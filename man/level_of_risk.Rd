@@ -14,7 +14,7 @@ A tibble with 293 rows and 4 variables:
 }
 }
 \source{
-The 2023 accessed from \url{https://www.cdc.gov/dengue/areaswithrisk/around-the-world.html} and 2024 accessed from \url{https://www.cdc.gov/dengue/areas-with-risk/index.html}.
+The 2024 data accessed from \url{https://www.cdc.gov/dengue/areas-with-risk/index.html}.
 }
 \usage{
 level_of_risk

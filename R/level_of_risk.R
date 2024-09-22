@@ -7,7 +7,7 @@
 #'   \item{region}{factor Region}
 #'   \item{last_accessed}{information last accessed date}
 #'    }
-#' @source The 2023 accessed from \url{https://www.cdc.gov/dengue/areaswithrisk/around-the-world.html} and 2024 accessed from \url{https://www.cdc.gov/dengue/areas-with-risk/index.html}.
+#' @source The 2024 data accessed from \url{https://www.cdc.gov/dengue/areas-with-risk/index.html}.
 #' @examples 
 #' head(level_of_risk)
 "level_of_risk"
