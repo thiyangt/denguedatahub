@@ -70,3 +70,41 @@ save(data2024, file=here("data-raw","sl" ,"data2024.rda"))
 #                                  end.date.last = "2024-02-23",
 #                                  week.no=c(8))
 #View(data2024_8)
+
+
+## Feb 13, 2025
+library(denguedatahub)
+link2024 <- get_pdflinks_srilanka(url="https://www.epid.gov.lk/weekly-epidemiological-report/weekly-epidemiological-report", volume.number="Vol_51")
+length(link2024)#50
+link2024[[33]][1] ## No 33 WER
+link2024[[50]][1] ## No 50 WER
+link2024.part2 <- link2024[33:50]
+data2024.part2 <- convert_slwer_to_tidy(year=2024, 
+                                  reports.url=link2024.part2, 
+                                  start.date.first = "2024-08-03",
+                                  end.date.first = "2024-08-09",
+                                  start.date.last = "2024-11-30", 
+                                  end.date.last = "2024-12-06",
+                                  week.no=c(32:49))
+View(data2024.part2)
+library(here)
+library(readr)
+write_csv(data2024.part2, file=here("data-raw",
+                              "sl",
+                              "data2024.part2.csv"))
+data2024.part2$district <- dplyr::recode(data2024.part2$district, 
+                                   Hambantota = "Hambanthota")
+bb <- unique(data2024.part2$district) == unique(denguedatahub::srilanka_weekly_data$district)
+table(bb)
+data2024.part2$year <- as.numeric(data2024.part2$year)
+data2024.part2$week <- as.numeric(data2024.part2$week)
+data2024.part2$start.date <- as.Date(data2024.part2$start.date)
+data2024.part2$end.date <- as.Date(data2024.part2$end.date)
+data2024.part2$district <- as.character(data2024.part2$district)
+data2024.part2$cases <- as.numeric(data2024.part2$cases)
+
+data("srilanka_weekly_data")
+srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, 
+                                         data2024.part2)
+View(srilanka_weekly_data)
+usethis::use_data(srilanka_weekly_data, overwrite = TRUE)
