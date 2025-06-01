@@ -48,8 +48,10 @@ convert_slwer_to_tidy <- function(year, reports.url, start.date.first, end.date.
     tbl2$cases <- as.numeric(cases2$cases)
     tbl4 <- tbl2
     colnames(tbl4) <- c("district", "cases")
-    nuwaraeliyarow <- which(tbl4$district == "Nuwara")
+    nuwaraeliyarow <- which(tbl4$district == "Nuwara"| tbl4$district =="Nuwara Eliya")#change 1 Jun 2025 (due to nuwara eliya issue)
     tbl4$district[nuwaraeliyarow] <- "NuwaraEliya"
+    Kalmunairow <- which(tbl4$district == "Kalmunai")#change 1 Jun 2025 (due to nuwara eliya issue)
+    tbl4$district[Kalmunairow] <- "Kalmune"
     tbl4$cases <- as.numeric(tbl4$cases)
     tbl4$district <- as.character(tbl4$district)
     } else {
@@ -64,6 +66,8 @@ convert_slwer_to_tidy <- function(year, reports.url, start.date.first, end.date.
       nuwaraeliyarow <- which(tbl4$District == "Nuwara")
       tbl4$District[nuwaraeliyarow] <- "NuwaraEliya"
       tbl4$Cases1[nuwaraeliyarow] <- as.numeric(tbl4$Cases2[nuwaraeliyarow])
+      Kalmunairow <- which(tbl4$district == "Kalmunai")#change 1 Jun 2025 (due to nuwara eliya issue)
+      tbl4$district[Kalmunairow] <- "Kalmune"
       tbl4 <- tbl4 |> dplyr::select(1:2)
       colnames(tbl4) <- c("district", "cases")
       tbl4$cases <- as.numeric(tbl4$cases)
@@ -128,6 +132,10 @@ convert_slwer_to_tidy <- function(year, reports.url, start.date.first, end.date.
                                Kurunagala = "Kurunegala")
   f3
 }
+
+
+
+
 
 
 #'@examples

@@ -108,3 +108,41 @@ srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data,
                                          data2024.part2)
 View(srilanka_weekly_data)
 usethis::use_data(srilanka_weekly_data, overwrite = TRUE)
+
+## 2025 - June - 1--------------------
+library(denguedatahub)
+link2024 <- get_pdflinks_srilanka(url="https://www.epid.gov.lk/weekly-epidemiological-report/weekly-epidemiological-report", volume.number="Vol_51")
+length(link2024)#52
+link2024[[51]][1] ## No 51 WER
+link2024[[52]][1] ## No 52 WER
+link2024.part3 <- link2024[51:52]
+data2024.part3 <- convert_slwer_to_tidy(year=2024, 
+                                        reports.url=link2024.part3, 
+                                        start.date.first = "2024-12-07",
+                                        end.date.first = "2024-12-13",
+                                        start.date.last = "2024-12-14", 
+                                        end.date.last = "2024-12-20",
+                                        week.no=c(51:52))
+View(data2024.part3)
+library(here)
+library(readr)
+write_csv(data2024.part3, file=here("data-raw",
+                                    "sl",
+                                    "data2024.part3.csv"))
+data2024.part3$district <- dplyr::recode(data2024.part3$district, 
+                                         Hambantota = "Hambanthota")
+bb <- unique(data2024.part3$district) == unique(denguedatahub::srilanka_weekly_data$district)
+table(bb)
+data2024.part3$year <- as.numeric(data2024.part3$year)
+data2024.part3$week <- as.numeric(data2024.part3$week)
+data2024.part3$start.date <- as.Date(data2024.part3$start.date)
+data2024.part3$end.date <- as.Date(data2024.part3$end.date)
+data2024.part3$district <- as.character(data2024.part3$district)
+data2024.part3$cases <- as.numeric(data2024.part3$cases)
+
+data("srilanka_weekly_data")
+srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, 
+                                         data2024.part3)
+View(srilanka_weekly_data)
+usethis::use_data(srilanka_weekly_data, overwrite = TRUE)
+
