@@ -8,7 +8,7 @@ library(dplyr)
 library(data.table)
 library(rvest)
 library(stringr)
-
+library(lubridate)
 
 # The URL of the weekly epidemiological reports page
 base_url <- "https://www.epid.gov.lk/weekly-epidemiological-report/weekly-epidemiological-report"
@@ -165,12 +165,25 @@ data2024.all <- convert_slwer_to_tidy(year=2024,
                                         start.date.last = "2024-12-14", 
                                         end.date.last = "2024-12-20",
                                         week.no=c(1:52))
+
+
+
+
+
 View(data2024.all)
+table(data2024.all$district)
 library(here)
 library(readr)
 write_csv(data2024.all, file=here("data-raw",
                                     "sl",
                                     "data2024.all.csv"))
+library(denguedatahub)
+library(tidyverse)
+library(here)
+data2024.all <- read_csv(here("data-raw",
+                              "sl",
+                              "data2024.all.csv"))
+data("srilanka_weekly_data")
 data2024.all$district <- dplyr::recode(data2024.all$district, 
                                          Hambantota = "Hambanthota")
 bb <- unique(data2024.all$district) == unique(denguedatahub::srilanka_weekly_data$district)
@@ -183,13 +196,26 @@ data2024.all$district <- as.character(data2024.all$district)
 data2024.all$cases <- as.numeric(data2024.all$cases)
 
 data("srilanka_weekly_data")
-new_rows <- anti_join(data2024.all, srilanka_weekly_data)
+#srilanka_weekly_data$start.date <- as.Date(srilanka_weekly_data$start.date)
+#srilanka_weekly_data$end.date <- as.Date(srilanka_weekly_data$end.date)
+
+srilanka_weekly_data <- srilanka_weekly_data |> filter(year!=2024)
 srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, 
-                                         new_rows)
+                                         data2024.all)
 View(srilanka_weekly_data)
+tail(srilanka_weekly_data)
 usethis::use_data(srilanka_weekly_data, overwrite = TRUE)
 ##
 #filling gaps manually
-data("srilanka_weekly_data")
-readr::write_csv(srilanka_weekly_data, here::here("data-raw", "srilanka_weekly_data.csv"))
-          
+#data("srilanka_weekly_data")
+#readr::write_csv(srilanka_weekly_data, here::here("data-raw", "srilanka_weekly_data.csv"))
+
+
+## -------------------
+##
+## Update manual edit
+##
+##----------------------
+#srilanka_weekly_data <- read_csv(here::here("data-raw", "srilanka_weekly_data.csv"))
+#View(srilanka_weekly_data)
+#usethis::use_data(srilanka_weekly_data, overwrite = TRUE)

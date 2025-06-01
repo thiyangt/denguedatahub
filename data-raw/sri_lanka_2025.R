@@ -47,6 +47,9 @@ library(readr)
 write_csv(data2025.part1, file=here("data-raw",
                                     "sl",
                                     "data2025.part1.csv"))
+data2025.part1 <- read_csv(here("data-raw",
+                                "sl",
+                                "data2025.part1.csv"))
 data2025.part1$district <- dplyr::recode(data2025.part1$district, 
                                          Hambantota = "Hambanthota")
 bb <- unique(data2025.part1$district) == unique(denguedatahub::srilanka_weekly_data$district)
@@ -58,9 +61,15 @@ data2025.part1$end.date <- as.Date(data2025.part1$end.date)
 data2025.part1$district <- as.character(data2025.part1$district)
 data2025.part1$cases <- as.numeric(data2025.part1$cases)
 
-data("srilanka_weekly_data")
+#data("srilanka_weekly_data")
 srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, 
                                          data2025.part1)
 View(srilanka_weekly_data)
+tail(srilanka_weekly_data)
+table(srilanka_weekly_data$district)
+summary(srilanka_weekly_data$cases)
+# Fill missing manually
+srilanka_weekly_data <- readr::read_csv(here::here("data-raw", "srilanka_weekly_data.csv"))
+
 usethis::use_data(srilanka_weekly_data, overwrite = TRUE)
 
