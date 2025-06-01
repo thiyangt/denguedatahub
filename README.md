@@ -34,25 +34,25 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(tsibble)
+#> Registered S3 method overwritten by 'tsibble':
+#>   method               from 
+#>   as_tibble.grouped_df dplyr
 #> 
 #> Attaching package: 'tsibble'
 #> The following objects are masked from 'package:base':
 #> 
 #>     intersect, setdiff, union
-```
-
-``` r
 library(denguedatahub)
 head(level_of_risk)
-#> # A tibble: 6 × 3
-#>   country      level_of_risk       region
-#>   <fct>        <fct>               <fct> 
-#> 1 Angola       Sporadic/Uncertain  Africa
-#> 2 Benin        Sporadic/Uncertain  Africa
-#> 3 Burkina Faso Frequent/Continuous Africa
-#> 4 Burundi      Sporadic/Uncertain  Africa
-#> 5 Cameroon     Sporadic/Uncertain  Africa
-#> 6 Cape Verde   Sporadic/Uncertain  Africa
+#> # A tibble: 6 × 4
+#>   country      level_of_risk       region last_accessed
+#>   <chr>        <chr>               <chr>  <date>       
+#> 1 Angola       Sporadic/Uncertain  Africa 2023-01-16   
+#> 2 Benin        Sporadic/Uncertain  Africa 2023-01-16   
+#> 3 Burkina Faso Frequent/Continuous Africa 2023-01-16   
+#> 4 Burundi      Sporadic/Uncertain  Africa 2023-01-16   
+#> 5 Cameroon     Sporadic/Uncertain  Africa 2023-01-16   
+#> 6 Cape Verde   Sporadic/Uncertain  Africa 2023-01-16
 ```
 
 ## Sri Lanka Weekly Dengue Cases
