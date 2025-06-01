@@ -31,8 +31,8 @@ data2025.part1$district <- as.character(data2025.part1$district)
 data2025.part1$cases <- as.numeric(data2025.part1$cases)
 
 ### June 1, 2025
-link2025[[12]][1] ## No 1 WER
-link2025[[16]][1] ## No 11 WER
+link2025[[12]][1] ## No 12 WER
+link2025[[16]][1] ## No 16 WER
 link2025.part2 <- link2025[12:16]
 data2025.part2 <- convert_slwer_to_tidy(year=2025, 
                                         reports.url=link2025.part1, 
