@@ -8,7 +8,7 @@
 #'   \item{cases}{cases}
 #'   \item{year}{year}
 #'    }
-#' @source \url{https://www3.paho.org/data/index.php/en/mnu-topics/indicadores-dengue-en/dengue-regional-en/261-dengue-reg-ano-en.html}
+#' @source \url{https://www.paho.org/en/arbo-portal/dengue-data-and-analysis/dengue-analysis-subregions}
 #' @examples 
 #' head(americas_annual_data)
 "americas_annual_data"

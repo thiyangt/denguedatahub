@@ -15,7 +15,7 @@ A tibble with 16 rows and 5 variables:
 }
 }
 \source{
-\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8997546/table/ijerph-19-03910-t001/?report=objectonly}
+\url{https://pmc.ncbi.nlm.nih.gov/articles/PMC8997546/table/ijerph-19-03910-t001/?report=objectonly}
 }
 \usage{
 china_annual_data

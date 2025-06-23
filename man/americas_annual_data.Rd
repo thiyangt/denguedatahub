@@ -15,7 +15,7 @@ A tibble with 899134 rows and 5 variables:
 }
 }
 \source{
-\url{https://www3.paho.org/data/index.php/en/mnu-topics/indicadores-dengue-en/dengue-regional-en/261-dengue-reg-ano-en.html}
+\url{https://www.paho.org/en/arbo-portal/dengue-data-and-analysis/dengue-analysis-subregions}
 }
 \usage{
 americas_annual_data

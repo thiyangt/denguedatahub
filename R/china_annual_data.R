@@ -8,7 +8,7 @@
 #'   \item{counties.with.dengue.fever.indigenous}{Number of counties with  dengue fever - indigenous cases}
 #'   \item{counties.with.dengue.fever.imported}{Number of counties with  dengue fever - imported cases}
 #'    }
-#' @source \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8997546/table/ijerph-19-03910-t001/?report=objectonly}
+#' @source \url{https://pmc.ncbi.nlm.nih.gov/articles/PMC8997546/table/ijerph-19-03910-t001/?report=objectonly}
 #' @examples 
 #' head(china_annual_data)
 "china_annual_data"
