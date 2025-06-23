@@ -61,14 +61,99 @@ head(level_of_risk)
 head(srilanka_weekly_data)
 #> # A tibble: 6 × 6
 #>    year  week start.date end.date   district    cases
-#>   <dbl> <dbl> <date>     <date>     <chr>       <dbl>
-#> 1  2006    52 2006-12-23 2006-12-29 Colombo        71
-#> 2  2006    52 2006-12-23 2006-12-29 Gampaha        12
-#> 3  2006    52 2006-12-23 2006-12-29 Kalutara       12
-#> 4  2006    52 2006-12-23 2006-12-29 Kandy          20
-#> 5  2006    52 2006-12-23 2006-12-29 Matale          4
-#> 6  2006    52 2006-12-23 2006-12-29 NuwaraEliya     1
+#>   <dbl> <dbl> <chr>      <chr>      <chr>       <dbl>
+#> 1  2006    52 12/23/2006 12/29/2006 Colombo        71
+#> 2  2006    52 12/23/2006 12/29/2006 Gampaha        12
+#> 3  2006    52 12/23/2006 12/29/2006 Kalutara       12
+#> 4  2006    52 12/23/2006 12/29/2006 Kandy          20
+#> 5  2006    52 12/23/2006 12/29/2006 Matale          4
+#> 6  2006    52 12/23/2006 12/29/2006 NuwaraEliya     1
+library(ggplot2)
+library(viridis)
+#> Loading required package: viridisLite
+library(dplyr)
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
+ggplot(
+  filter(srilanka_weekly_data, year < 2019 & year > 2012),
+  aes(
+    x = week,
+    y = district,
+    fill = cut(
+      cases,
+      breaks = c(0, 50, 100, 200, Inf),
+      labels = c("0–50", "50–100", "100–200", ">200"),
+      include.lowest = TRUE,
+      right = FALSE
+    )
+  )
+) +
+  geom_tile(color = "white") +
+  scale_fill_viridis_d(
+    option = "C",
+    name = "Dengue Cases"
+  ) +
+  facet_wrap(~year, ncol = 3) +
+  labs(
+    title = "Weekly Dengue Cases by District in Sri Lanka (2012–2019)",
+    x = "Week Number",
+    y = "District"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    axis.text.x = element_text(angle = 90, hjust = 1, size = 6),
+    axis.text.y = element_text(size = 7),
+    legend.position = "bottom",
+    strip.text = element_text(size = 9)
+  )
 ```
+
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+
+``` r
+
+
+ggplot(
+  filter(srilanka_weekly_data, year > 2019),
+  aes(
+    x = week,
+    y = district,
+    fill = cut(
+      cases,
+      breaks = c(0, 50, 100, 200, Inf),
+      labels = c("0–50", "50–100", "100–200", ">200"),
+      include.lowest = TRUE,
+      right = FALSE
+    )
+  )
+) +
+  geom_tile(color = "white") +
+  scale_fill_viridis_d(
+    option = "C",
+    name = "Dengue Cases"
+  ) +
+  facet_wrap(~year, ncol = 3) +
+  labs(
+    title = "Weekly Dengue Cases by District in Sri Lanka (2020–2025)",
+    x = "Week Number",
+    y = "District"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    axis.text.x = element_text(angle = 90, hjust = 1, size = 6),
+    axis.text.y = element_text(size = 7),
+    legend.position = "bottom",
+    strip.text = element_text(size = 9)
+  )
+```
+
+<img src="man/figures/README-unnamed-chunk-2-2.png" width="100%" />
 
 ## World
 

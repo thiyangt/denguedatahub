@@ -73,3 +73,15 @@ srilanka_weekly_data <- readr::read_csv(here::here("data-raw", "srilanka_weekly_
 
 usethis::use_data(srilanka_weekly_data, overwrite = TRUE)
 
+###################
+# date: 23 June 2025
+## Fixing errors in the dataset
+install.packages("devtools")
+devtools::install_github("thiyangt/denguedatahub")
+library(denguedatahub)
+data("srilanka_weekly_data")
+srilanka_weekly_data <- srilanka_weekly_data[-which(srilanka_weekly_data$year == 2023 & srilanka_weekly_data$week == 52), ]
+
+srilanka_weekly_data <- srilanka_weekly_data[which(srilanka_weekly_data$start.date == "12/26/2020"), ]$cases <-  c(35, 17,  18, 20, 2, 0, 3, 2, 7, 6, 1, 1, 0, 0, 208, 0, 0, 12, 8, 4, 0, 0, 0, 2, 3, 2)
+
+usethis::use_data(srilanka_weekly_data, overwrite = TRUE)
