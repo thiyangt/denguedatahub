@@ -68,6 +68,9 @@ head(srilanka_weekly_data)
 #> 4  2006    52 12/23/2006 12/29/2006 Kandy          20
 #> 5  2006    52 12/23/2006 12/29/2006 Matale          4
 #> 6  2006    52 12/23/2006 12/29/2006 NuwaraEliya     1
+```
+
+``` r
 library(ggplot2)
 library(viridis)
 #> Loading required package: viridisLite
@@ -80,6 +83,39 @@ library(dplyr)
 #> The following objects are masked from 'package:base':
 #> 
 #>     intersect, setdiff, setequal, union
+
+country_weekly <- srilanka_weekly_data |>
+  group_by(year, week, start.date) %>%
+  summarise(total_cases = sum(cases, na.rm = TRUE), .groups = 'drop') |>
+  arrange(start.date)
+
+country_weekly <- country_weekly |> 
+  mutate(
+         yearweek = yearweek(start.date)) |>
+  distinct(yearweek, .keep_all = TRUE) 
+
+country_weekly_tsibble <- country_weekly |>
+  as_tsibble(index = yearweek)
+
+p1 <- ggplot(country_weekly_tsibble, aes(x = yearweek, y = total_cases)) +
+  geom_line() +
+  scale_x_yearweek(date_breaks = "1 year", date_labels = "%Y") +
+  labs(
+    x = "Year",
+    y = "Weekly Dengue Cases"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    plot.title = element_text(face = "bold")
+  )
+p1
+```
+
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+
+``` r
+
 ggplot(
   filter(srilanka_weekly_data, year < 2019 & year > 2012),
   aes(
@@ -114,7 +150,7 @@ ggplot(
   )
 ```
 
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
 ``` r
 
@@ -153,7 +189,7 @@ ggplot(
   )
 ```
 
-<img src="man/figures/README-unnamed-chunk-2-2.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-2.png" width="100%" />
 
 ## World
 
