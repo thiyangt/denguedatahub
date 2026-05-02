@@ -72,12 +72,12 @@ tail(srilanka_weekly_data)
 #> # A tibble: 6 × 6
 #>    year  week start.date end.date   district    cases
 #>   <dbl> <dbl> <chr>      <chr>      <chr>       <dbl>
-#> 1  2025    52 2025-12-13 2025-12-19 Polonnaruwa    14
-#> 2  2025    52 2025-12-13 2025-12-19 Badulla        25
-#> 3  2025    52 2025-12-13 2025-12-19 Monaragala     24
-#> 4  2025    52 2025-12-13 2025-12-19 Ratnapura      60
-#> 5  2025    52 2025-12-13 2025-12-19 Kegalle        37
-#> 6  2025    52 2025-12-13 2025-12-19 Kalmune         8
+#> 1  2025    52 12/13/2025 12/19/2025 Polonnaruwa    14
+#> 2  2025    52 12/13/2025 12/19/2025 Badulla        25
+#> 3  2025    52 12/13/2025 12/19/2025 Monaragala     24
+#> 4  2025    52 12/13/2025 12/19/2025 Ratnapura      60
+#> 5  2025    52 12/13/2025 12/19/2025 Kegalle        37
+#> 6  2025    52 12/13/2025 12/19/2025 Kalmune         8
 ```
 
 ``` r

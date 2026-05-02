@@ -55,3 +55,40 @@ srilanka_weekly_data <- readr::write_csv(srilanka_weekly_data, file = here::here
 
 usethis::use_data(srilanka_weekly_data, overwrite = TRUE)
 
+# Manual update
+link2025[[15]][1] 
+link2025[[16]][1] 
+link2025[[17]][1] 
+link2025[[45]][1] 
+link2025[[46]][1] 
+link2025[[47]][1] 
+link2025[[48]][1] 
+
+
+
+data2025.part2 <- read_csv(here("data-raw",
+                                "sl",
+                                "data2025.part2.csv"))
+data2025.part2$district <- dplyr::recode(data2025.part2$district, 
+                                         Hambantota = "Hambanthota")
+bb <- unique(data2025.part2$district) == unique(denguedatahub::srilanka_weekly_data$district)
+table(bb)
+data2025.part2$year <- as.numeric(data2025.part2$year)
+data2025.part2$week <- as.numeric(data2025.part2$week)
+data2025.part2$start.date <- as.character(data2025.part2$start.date)
+data2025.part2$end.date <- as.character(data2025.part2$end.date)
+data2025.part2$district <- as.character(data2025.part2$district)
+data2025.part2$cases <- as.numeric(data2025.part2$cases)
+
+
+
+srilanka_weekly_data <- dplyr::bind_rows(srilanka_weekly_data, 
+                                         data2025.part2)
+View(srilanka_weekly_data)
+tail(srilanka_weekly_data)
+table(srilanka_weekly_data$district)
+summary(srilanka_weekly_data$cases)
+# Fill missing manually
+srilanka_weekly_data <- readr::write_csv(srilanka_weekly_data, file = here::here("data-raw", "srilanka_weekly_data.csv"))
+
+usethis::use_data(srilanka_weekly_data, overwrite = TRUE)
