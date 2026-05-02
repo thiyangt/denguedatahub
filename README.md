@@ -112,7 +112,7 @@ p1 <- ggplot(country_weekly_tsibble, aes(x = yearweek, y = total_cases)) +
 p1
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-3-1.png" alt="" width="100%" />
 
 ``` r
 
@@ -150,7 +150,7 @@ ggplot(
   )
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" alt="" width="100%" />
 
 ``` r
 
@@ -189,7 +189,7 @@ ggplot(
   )
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-2.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-2.png" alt="" width="100%" />
 
 ## World
 
