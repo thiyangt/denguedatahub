@@ -24,8 +24,8 @@ install.packages("denguedatahub")
 ```
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("thiyangt/denguedatahub")
+# install.packages("pak")
+pak::pak("thiyangt/denguedatahub")
 ```
 
 ## Example
@@ -68,6 +68,16 @@ head(srilanka_weekly_data)
 #> 4  2006    52 12/23/2006 12/29/2006 Kandy          20
 #> 5  2006    52 12/23/2006 12/29/2006 Matale          4
 #> 6  2006    52 12/23/2006 12/29/2006 NuwaraEliya     1
+tail(srilanka_weekly_data)
+#> # A tibble: 6 × 6
+#>    year  week start.date end.date   district    cases
+#>   <dbl> <dbl> <chr>      <chr>      <chr>       <dbl>
+#> 1  2025    52 2025-12-13 2025-12-19 Polonnaruwa    14
+#> 2  2025    52 2025-12-13 2025-12-19 Badulla        25
+#> 3  2025    52 2025-12-13 2025-12-19 Monaragala     24
+#> 4  2025    52 2025-12-13 2025-12-19 Ratnapura      60
+#> 5  2025    52 2025-12-13 2025-12-19 Kegalle        37
+#> 6  2025    52 2025-12-13 2025-12-19 Kalmune         8
 ```
 
 ``` r

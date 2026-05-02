@@ -1,6 +1,8 @@
 #####
 ## 2 May 2026
 library(denguedatahub)
+library(tidyverse)
+library(here)
 link2025 <- get_pdflinks_srilanka(url="https://www.epid.gov.lk/weekly-epidemiological-report/weekly-epidemiological-report", volume.number="Vol_52")
 length(link2025)#52
 link2025[[12]][1] ## No 12 WER
@@ -19,6 +21,16 @@ library(readr)
 write_csv(data2025.part2, file=here("data-raw",
                                     "sl",
                                     "data2025.part2.csv"))
+
+######
+library(denguedatahub)
+data("srilanka_weekly_data")
+head(srilanka_weekly_data)
+tail(srilanka_weekly_data)
+
+data2025.part2 <- read_csv(here("data-raw",
+                                "sl",
+                                "data2025.part2.csv"))
 data2025.part2$district <- dplyr::recode(data2025.part2$district, 
                                          Hambantota = "Hambanthota")
 bb <- unique(data2025.part2$district) == unique(denguedatahub::srilanka_weekly_data$district)
@@ -39,7 +51,7 @@ tail(srilanka_weekly_data)
 table(srilanka_weekly_data$district)
 summary(srilanka_weekly_data$cases)
 # Fill missing manually
-srilanka_weekly_data <- readr::read_csv(here::here("data-raw", "srilanka_weekly_data.csv"))
+srilanka_weekly_data <- readr::write_csv(srilanka_weekly_data, file = here::here("data-raw", "srilanka_weekly_data.csv"))
 
 usethis::use_data(srilanka_weekly_data, overwrite = TRUE)
 

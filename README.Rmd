@@ -32,8 +32,8 @@ install.packages("denguedatahub")
 ```
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("thiyangt/denguedatahub")
+# install.packages("pak")
+pak::pak("thiyangt/denguedatahub")
 ```
 
 ## Example
@@ -50,6 +50,7 @@ head(level_of_risk)
 
 ```{r}
 head(srilanka_weekly_data)
+tail(srilanka_weekly_data)
 ```
 
 ```{r}
