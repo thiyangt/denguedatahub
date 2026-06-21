@@ -70,14 +70,14 @@ head(srilanka_weekly_data)
 #> 6  2006    52 12/23/2006 12/29/2006 NuwaraEliya     1
 tail(srilanka_weekly_data)
 #> # A tibble: 6 × 6
-#>    year  week start.date end.date   district    cases
-#>   <dbl> <dbl> <chr>      <chr>      <chr>       <dbl>
-#> 1  2025    52 12/13/2025 12/19/2025 Polonnaruwa    14
-#> 2  2025    52 12/13/2025 12/19/2025 Badulla        25
-#> 3  2025    52 12/13/2025 12/19/2025 Monaragala     24
-#> 4  2025    52 12/13/2025 12/19/2025 Ratnapura      60
-#> 5  2025    52 12/13/2025 12/19/2025 Kegalle        37
-#> 6  2025    52 12/13/2025 12/19/2025 Kalmune         8
+#>    year  week start.date end.date  district    cases
+#>   <dbl> <dbl> <chr>      <chr>     <chr>       <dbl>
+#> 1  2026    20 5/11/2026  5/17/2026 Polonnaruwa    13
+#> 2  2026    20 5/11/2026  5/17/2026 Badulla        20
+#> 3  2026    20 5/11/2026  5/17/2026 Monaragala     19
+#> 4  2026    20 5/11/2026  5/17/2026 Ratnapura     168
+#> 5  2026    20 5/11/2026  5/17/2026 Kegalle        73
+#> 6  2026    20 5/11/2026  5/17/2026 Kalmune        24
 ```
 
 ``` r
