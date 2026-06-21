@@ -21,7 +21,7 @@ The goal of `denguedatahub` is to provide the research community with a unified 
 
 ![](hexsticker/profile.png)
 
-Check out the website at https://denguedatahub.netlify.app/
+Check out the website at [https://thiyangt.github.io/denguedatahubweb/](https://thiyangt.github.io/denguedatahubweb/)
 
 ## Installation
 

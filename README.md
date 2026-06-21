@@ -12,7 +12,7 @@ dengue and the reproducibility of research.
 
 ![](hexsticker/profile.png)
 
-Check out the website at <https://denguedatahub.netlify.app/>
+Check out the website at <https://thiyangt.github.io/denguedatahubweb/>
 
 ## Installation
 
