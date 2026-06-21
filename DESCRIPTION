@@ -1,12 +1,12 @@
 Package: denguedatahub
 Title: A Tidy Format Datasets of Dengue by Country 
-Version: 4.1.0
+Version: 4.1.1
 Authors@R: 
     person("Thiyanga S.", "Talagala", , "ttalagala@sjp.ac.lk", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-0656-9789"))
 Description: Provides a weekly, monthly, yearly summary of dengue cases by state/ province/ country.
 License: GPL-3
-URL: https://denguedatahub.netlify.app/
+URL: https://thiyangt.github.io/denguedatahubweb/
 BugReports: https://github.com/thiyangt/denguedatahub/issues
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
