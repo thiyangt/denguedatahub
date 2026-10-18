@@ -1,0 +1,36 @@
+<svg
+   version="1.1"
+   id="svg2"
+   width="166.95731"
+   height="193.18655"
+   viewBox="0 0 166.9573 193.18655"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <g transform="matrix(1.3333333,0,0,-1.3333333,-9.8546931,204.59333)">
+    <g transform="scale(0.1)">
+      <path d="M 699.99996,86.031868 74.325944,447.97055 V 1172.0294 L 699.99996,1533.9689 1325.6742,1172.0294 V 447.97055 Z" style="fill:#fff9d9;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.999336"/>
+      <path d="M 1275.3317,1201.3513 802.28599,1475.0795 699.58424,1534.45 596.88248,1475.0795 123.83782,1201.3513 73.9102,1172.5105 V 448.45165 l 49.92762,-28.83984 478.8618,-277.12785 96.88462,-55.971004 96.88462,55.971004 478.86284,277.12785 49.9268,28.83984 v 724.05885 z m 0,-725.76868 L 699.58424,142.48396 123.83782,475.58262 v 666.39818 l 575.74642,333.0987 575.74746,-333.0987 z" style="fill:#b5dc9a;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.999336"/>
+      <g aria-label="denguedatahub" transform="scale(1,-1)" text-anchor="middle" font-family="sans-serif" font-size="150" fill="#0b2d5c">
+        <text x="700" y="-900.75043">denguedatahub</text>
+      </g>
+      <g transform="translate(700,570) rotate(180)">
+        <g fill="#f6bf54" stroke="#e5a73d" stroke-width="8">
+          <ellipse cx="0" cy="-112" rx="52" ry="75"/>
+          <ellipse cx="0" cy="-112" rx="52" ry="75" transform="rotate(45)"/>
+          <ellipse cx="0" cy="-112" rx="52" ry="75" transform="rotate(90)"/>
+          <ellipse cx="0" cy="-112" rx="52" ry="75" transform="rotate(135)"/>
+          <ellipse cx="0" cy="-112" rx="52" ry="75" transform="rotate(180)"/>
+          <ellipse cx="0" cy="-112" rx="52" ry="75" transform="rotate(225)"/>
+          <ellipse cx="0" cy="-112" rx="52" ry="75" transform="rotate(270)"/>
+          <ellipse cx="0" cy="-112" rx="52" ry="75" transform="rotate(315)"/>
+        </g>
+        <circle r="95" fill="#ffe778" stroke="#d9a83b" stroke-width="8"/>
+        <circle cx="-32" cy="-18" r="9" fill="#554331"/>
+        <circle cx="32" cy="-18" r="9" fill="#554331"/>
+        <path d="M -43,22 Q 0,68 43,22" fill="none" stroke="#554331" stroke-width="10" stroke-linecap="round"/>
+      </g>
+    </g>
+  </g>
+</svg>
