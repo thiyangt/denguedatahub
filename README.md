@@ -6,9 +6,9 @@
 # denguedatahub <img src="hexsticker/logo.png" align="right" height="180"/>
 
 The goal of `denguedatahub` is to provide the research community with a
-unified dataset by collecting worldwide dengue-related data, merged with
-exogenous variables helpful for a better understanding of the spread of
-dengue and the reproducibility of research.
+unified tidy dataset by collecting worldwide dengue-related data, merged
+with exogenous variables helpful for a better understanding of the
+spread of dengue and the reproducibility of research.
 
 ![](hexsticker/profile.png)
 
@@ -70,14 +70,14 @@ head(srilanka_weekly_data)
 #> 6  2006    52 12/23/2006 12/29/2006 NuwaraEliya     1
 tail(srilanka_weekly_data)
 #> # A tibble: 6 × 6
-#>    year  week start.date end.date  district    cases
-#>   <dbl> <dbl> <chr>      <chr>     <chr>       <dbl>
-#> 1  2026    20 5/11/2026  5/17/2026 Polonnaruwa    13
-#> 2  2026    20 5/11/2026  5/17/2026 Badulla        20
-#> 3  2026    20 5/11/2026  5/17/2026 Monaragala     19
-#> 4  2026    20 5/11/2026  5/17/2026 Ratnapura     168
-#> 5  2026    20 5/11/2026  5/17/2026 Kegalle        73
-#> 6  2026    20 5/11/2026  5/17/2026 Kalmune        24
+#>    year  week start.date end.date   district    cases
+#>   <dbl> <dbl> <chr>      <chr>      <chr>       <dbl>
+#> 1  2026    37 2026-09-07 2026-09-13 Polonnaruwa     1
+#> 2  2026    37 2026-09-07 2026-09-13 Badulla         3
+#> 3  2026    37 2026-09-07 2026-09-13 Monaragala     15
+#> 4  2026    37 2026-09-07 2026-09-13 Ratnapura      34
+#> 5  2026    37 2026-09-07 2026-09-13 Kegalle         4
+#> 6  2026    37 2026-09-07 2026-09-13 Kalmune         0
 ```
 
 ``` r
